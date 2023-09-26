@@ -14,7 +14,7 @@ namespace Program.UI.Forms
 {
     public partial class AddQueue : Form
     {
-        public AddQueue()
+        public AddQueue(WashingProcess wp)
         {
             InitializeComponent();
         }
@@ -41,14 +41,35 @@ namespace Program.UI.Forms
             rbExterior.Enabled = true;
             rbFull.Enabled = true;
             rbInterior.Enabled = true;
-            rbInterior.Checked=true;
+            rbInterior.Checked = true;
 
             SelectedVehicle = (Vehicle)lvCustomers.SelectedItems[0].Tag;
             lblBodyType.Text = "Body Type: " + SelectedVehicle.BodyType.ToString();
             lblBrand.Text = "Brand: " + SelectedVehicle.Brand;
             lblModel.Text = "Model: " + SelectedVehicle.Model;
-            lblPrice.Text = "Price: " + vehicleRep.GetPrice(SelectedVehicle, "Interior");
+            lblPrice.Text = "Price: " + vehicleRep.GetPrice(SelectedVehicle, "Interior").ToString();
         }
 
+        private void rbInterior_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbInterior.Checked) lblPrice.Text = "Price: " + vehicleRep.GetPrice(SelectedVehicle, "Interior").ToString();
+        }
+
+        private void rbExterior_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbExterior.Checked) lblPrice.Text = "Price: " + vehicleRep.GetPrice(SelectedVehicle, "Exterior").ToString();
+
+        }
+
+        private void rbFull_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbFull.Checked) lblPrice.Text = "Price: " + vehicleRep.GetPrice(SelectedVehicle, "Full").ToString();
+        }
+
+        private void btnAddQueue_Click(object sender, EventArgs e)
+        {
+            WashingProcess wp;
+            DialogResult = DialogResult.OK;
+        }
     }
 }

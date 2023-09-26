@@ -97,6 +97,7 @@
             btnAddQueue.TabIndex = 4;
             btnAddQueue.Text = "Add Queue";
             btnAddQueue.UseVisualStyleBackColor = true;
+            btnAddQueue.Click += btnAddQueue_Click;
             // 
             // lblBrand
             // 
@@ -146,6 +147,7 @@
             rbInterior.TabStop = true;
             rbInterior.Text = "Interior";
             rbInterior.UseVisualStyleBackColor = true;
+            rbInterior.CheckedChanged += rbInterior_CheckedChanged;
             // 
             // rbExterior
             // 
@@ -158,6 +160,7 @@
             rbExterior.TabStop = true;
             rbExterior.Text = "Exterior";
             rbExterior.UseVisualStyleBackColor = true;
+            rbExterior.CheckedChanged += rbExterior_CheckedChanged;
             // 
             // rbFull
             // 
@@ -170,6 +173,7 @@
             rbFull.TabStop = true;
             rbFull.Text = "Full";
             rbFull.UseVisualStyleBackColor = true;
+            rbFull.CheckedChanged += rbFull_CheckedChanged;
             // 
             // groupBox1
             // 
