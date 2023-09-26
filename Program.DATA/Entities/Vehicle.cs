@@ -14,7 +14,7 @@ namespace Program.DATA.Entities
         public int ProductionDate { get; set; }
         public string Model { get; set; }
         public BodyType BodyType { get; set; }
-        public WashingProcess WashingProcess { get; set; }
+        public List<WashingProcess> WashingProcess { get; set; }
         public Customer Customer { get; set; }
     }
 }
