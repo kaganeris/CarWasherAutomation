@@ -22,8 +22,8 @@ namespace Program.DATA.Entities
                 
             }
         }
-        public DateTime SubscribeDate { get; set; }
-        public DateTime SubscribeEndingDate { get; set; }
+        public DateTime? SubscribeDate { get; set; }
+        public DateTime? SubscribeEndingDate { get; set; }
         public List<Vehicle> Vehicles { get; set; }
     }
 }

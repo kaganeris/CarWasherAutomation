@@ -8,6 +8,7 @@ namespace Program.DATA.Entities
 {
     public class MaterialWashingProcess
     {
+        public int ID { get; set; }
         public int MaterialID { get; set; }
         public int WashingProcessID { get; set; }
 

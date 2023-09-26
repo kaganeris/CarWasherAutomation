@@ -10,6 +10,7 @@ namespace Program.DATA.Enums
     {
         Basic,
         Classic,
-        Premium
+        Premium,
+        None
     }
 }
