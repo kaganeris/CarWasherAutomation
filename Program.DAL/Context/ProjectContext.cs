@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Program.DAL.Mapping;
 using Program.DATA.Entities;
 using System;
 using System.Collections.Generic;
@@ -28,6 +29,20 @@ namespace Program.DAL.Context
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+
+            new CustomerMapping().Configure(modelBuilder.Entity<Customer>());
+
+            new EmployeeMapping().Configure(modelBuilder.Entity<Employee>());
+
+            new MaterialMapping().Configure(modelBuilder.Entity<Material>());
+
+            new MaterialWashingProcessMapping().Configure(modelBuilder.Entity<MaterialWashingProcess>());
+
+            new SupplierMapping().Configure(modelBuilder.Entity<Supplier>());
+
+            new VehicleMapping().Configure(modelBuilder.Entity<Vehicle>());
+
+            new WashingProcessMapping().Configure(modelBuilder.Entity<WashingProcess>());
         }
     }
 }
