@@ -58,9 +58,9 @@ namespace Program.UI.Forms
             if (rbInterior.Checked)
             {
                 lblPrice.Text = "Price: " + vehicleRep.GetPrice(SelectedVehicle, "Interior").ToString();
-                wp.ProcessType= ProcessType.Interior;
+                wp.ProcessType = ProcessType.Interior;
             }
-                
+
         }
 
         private void rbExterior_CheckedChanged(object sender, EventArgs e)
@@ -84,8 +84,8 @@ namespace Program.UI.Forms
         WashingProcessRepository wpRep;
         private void btnAddQueue_Click(object sender, EventArgs e)
         {
-            wpRep = new WashingProcessRepository(); 
-            
+            wpRep = new WashingProcessRepository();
+
             wp.IsQueue = true;
             wpRep.Add(wp);
             DialogResult = DialogResult.OK;

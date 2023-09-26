@@ -48,9 +48,10 @@
             // 
             // txtSearch
             // 
+            txtSearch.BorderStyle = BorderStyle.None;
             txtSearch.Location = new Point(98, 34);
             txtSearch.Name = "txtSearch";
-            txtSearch.Size = new Size(283, 27);
+            txtSearch.Size = new Size(283, 20);
             txtSearch.TabIndex = 0;
             txtSearch.TextChanged += txtSearch_TextChanged;
             // 
@@ -200,6 +201,7 @@
             ClientSize = new Size(879, 532);
             Controls.Add(groupBox1);
             Controls.Add(lvCustomers);
+            ForeColor = SystemColors.ActiveCaptionText;
             FormBorderStyle = FormBorderStyle.None;
             Name = "AddQueue";
             Text = "AddQueue";
