@@ -3,11 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33815.320
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Program.UI", "Program.UI\Program.UI.csproj", "{18E95D80-5E94-4D06-8F7B-9D6BDEA2B1B4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Program.UI", "Program.UI\Program.UI.csproj", "{18E95D80-5E94-4D06-8F7B-9D6BDEA2B1B4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Program.DATA", "Program.DATA\Program.DATA.csproj", "{43A05684-C56C-41ED-A7AA-1857DE37A658}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Program.DATA", "Program.DATA\Program.DATA.csproj", "{43A05684-C56C-41ED-A7AA-1857DE37A658}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Program.DAL", "Program.DAL\Program.DAL.csproj", "{31164AC4-AB06-413F-BBDB-2310B723B697}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Program.DAL", "Program.DAL\Program.DAL.csproj", "{31164AC4-AB06-413F-BBDB-2310B723B697}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Program.Business", "Program.Business\Program.Business.csproj", "{8A8F334C-F583-4A22-8AEA-4A822EFDDA41}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{31164AC4-AB06-413F-BBDB-2310B723B697}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{31164AC4-AB06-413F-BBDB-2310B723B697}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{31164AC4-AB06-413F-BBDB-2310B723B697}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A8F334C-F583-4A22-8AEA-4A822EFDDA41}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A8F334C-F583-4A22-8AEA-4A822EFDDA41}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A8F334C-F583-4A22-8AEA-4A822EFDDA41}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A8F334C-F583-4A22-8AEA-4A822EFDDA41}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
