@@ -11,7 +11,7 @@ namespace Program.DATA.Entities
     {
         public WashingProcess()
         {
-            Material = new List<Material>();
+            MaterialWashingProcesses = new List<MaterialWashingProcess>();
         }
         public int VehicleID { get; set; }
         public int EmployeeID { get; set; }
@@ -97,7 +97,7 @@ namespace Program.DATA.Entities
         public double VehiclePollution { get; set; }
         public double WaterConsumption { get; set; }
         public ProcessType ProcessType { get; set; }
-        public List<Material> Material { get; set; }
+        public List<MaterialWashingProcess> MaterialWashingProcesses { get; set; }
         public Vehicle Vehicle { get; set; }
         public Employee Employee { get; set; }
 

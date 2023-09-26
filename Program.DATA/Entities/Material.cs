@@ -10,13 +10,13 @@ namespace Program.DATA.Entities
     {
         public Material()
         {
-            WashingProcesses = new List<WashingProcess>();
+            MaterialWashingProcesses = new List<MaterialWashingProcess>();
         }
         public int SupplierID { get; set; }
         public string MaterialName { get; set; }
         public decimal MaterialPrice { get; set; }
         public int Stock { get; set; }
-        public List<WashingProcess> WashingProcesses { get; set; }
+        public List<MaterialWashingProcess> MaterialWashingProcesses { get; set; }
         public Supplier Supplier { get; set; }
     }
 }
