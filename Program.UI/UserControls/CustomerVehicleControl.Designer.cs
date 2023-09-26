@@ -40,7 +40,7 @@
             // pictureBox1
             // 
             pictureBox1.Location = new Point(42, 4);
-            pictureBox1.Margin = new Padding(4, 4, 4, 4);
+            pictureBox1.Margin = new Padding(4);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(145, 70);
             pictureBox1.TabIndex = 0;
@@ -84,7 +84,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(217, 14);
+            button1.Location = new Point(203, 14);
             button1.Name = "button1";
             button1.Size = new Size(75, 60);
             button1.TabIndex = 5;
@@ -102,9 +102,9 @@
             Controls.Add(label1);
             Controls.Add(pictureBox1);
             Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            Margin = new Padding(4, 4, 4, 4);
+            Margin = new Padding(4);
             Name = "CustomerVehicleControl";
-            Size = new Size(295, 134);
+            Size = new Size(290, 130);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();

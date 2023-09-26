@@ -30,25 +30,25 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainMenu));
             panel1 = new Panel();
-            panel2 = new Panel();
-            btnDashboard = new Button();
-            btnVehicles = new Button();
-            btnCustomers = new Button();
             btnEmployees = new Button();
-            panel3 = new Panel();
-            label1 = new Label();
-            lblTodayCustomerCount = new Label();
-            panel4 = new Panel();
-            lblVehiclesCount = new Label();
-            label3 = new Label();
+            btnCustomers = new Button();
+            btnVehicles = new Button();
+            btnDashboard = new Button();
+            panel2 = new Panel();
             panel5 = new Panel();
             lblEmployeeCount = new Label();
             label5 = new Label();
+            panel4 = new Panel();
+            lblVehiclesCount = new Label();
+            label3 = new Label();
+            panel3 = new Panel();
+            lblTodayCustomerCount = new Label();
+            label1 = new Label();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
-            panel3.SuspendLayout();
-            panel4.SuspendLayout();
             panel5.SuspendLayout();
+            panel4.SuspendLayout();
+            panel3.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -63,66 +63,6 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(290, 846);
             panel1.TabIndex = 0;
-            // 
-            // panel2
-            // 
-            panel2.BackgroundImage = (Image)resources.GetObject("panel2.BackgroundImage");
-            panel2.Controls.Add(panel5);
-            panel2.Controls.Add(panel4);
-            panel2.Controls.Add(panel3);
-            panel2.Dock = DockStyle.Top;
-            panel2.Location = new Point(290, 0);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(917, 130);
-            panel2.TabIndex = 1;
-            // 
-            // btnDashboard
-            // 
-            btnDashboard.BackColor = Color.Transparent;
-            btnDashboard.FlatAppearance.BorderSize = 0;
-            btnDashboard.FlatStyle = FlatStyle.Flat;
-            btnDashboard.Font = new Font("Century Gothic", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            btnDashboard.ForeColor = Color.White;
-            btnDashboard.Image = (Image)resources.GetObject("btnDashboard.Image");
-            btnDashboard.Location = new Point(3, 226);
-            btnDashboard.Name = "btnDashboard";
-            btnDashboard.Size = new Size(284, 84);
-            btnDashboard.TabIndex = 2;
-            btnDashboard.Text = "        Dashboard";
-            btnDashboard.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnDashboard.UseVisualStyleBackColor = false;
-            // 
-            // btnVehicles
-            // 
-            btnVehicles.BackColor = Color.Transparent;
-            btnVehicles.FlatAppearance.BorderSize = 0;
-            btnVehicles.FlatStyle = FlatStyle.Flat;
-            btnVehicles.Font = new Font("Century Gothic", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            btnVehicles.ForeColor = Color.White;
-            btnVehicles.Image = (Image)resources.GetObject("btnVehicles.Image");
-            btnVehicles.Location = new Point(3, 357);
-            btnVehicles.Name = "btnVehicles";
-            btnVehicles.Size = new Size(284, 84);
-            btnVehicles.TabIndex = 3;
-            btnVehicles.Text = "        Vehicles";
-            btnVehicles.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnVehicles.UseVisualStyleBackColor = false;
-            // 
-            // btnCustomers
-            // 
-            btnCustomers.BackColor = Color.Transparent;
-            btnCustomers.FlatAppearance.BorderSize = 0;
-            btnCustomers.FlatStyle = FlatStyle.Flat;
-            btnCustomers.Font = new Font("Century Gothic", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            btnCustomers.ForeColor = Color.White;
-            btnCustomers.Image = (Image)resources.GetObject("btnCustomers.Image");
-            btnCustomers.Location = new Point(6, 486);
-            btnCustomers.Name = "btnCustomers";
-            btnCustomers.Size = new Size(284, 84);
-            btnCustomers.TabIndex = 3;
-            btnCustomers.Text = "        Customers";
-            btnCustomers.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnCustomers.UseVisualStyleBackColor = false;
             // 
             // btnEmployees
             // 
@@ -140,67 +80,67 @@
             btnEmployees.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnEmployees.UseVisualStyleBackColor = false;
             // 
-            // panel3
+            // btnCustomers
             // 
-            panel3.BackColor = Color.Transparent;
-            panel3.Controls.Add(lblTodayCustomerCount);
-            panel3.Controls.Add(label1);
-            panel3.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            panel3.ForeColor = Color.White;
-            panel3.Location = new Point(123, 3);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(200, 124);
-            panel3.TabIndex = 0;
+            btnCustomers.BackColor = Color.Transparent;
+            btnCustomers.FlatAppearance.BorderSize = 0;
+            btnCustomers.FlatStyle = FlatStyle.Flat;
+            btnCustomers.Font = new Font("Century Gothic", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            btnCustomers.ForeColor = Color.White;
+            btnCustomers.Image = (Image)resources.GetObject("btnCustomers.Image");
+            btnCustomers.Location = new Point(6, 486);
+            btnCustomers.Name = "btnCustomers";
+            btnCustomers.Size = new Size(284, 84);
+            btnCustomers.TabIndex = 3;
+            btnCustomers.Text = "        Customers";
+            btnCustomers.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnCustomers.UseVisualStyleBackColor = false;
             // 
-            // label1
+            // btnVehicles
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(3, 6);
-            label1.Name = "label1";
-            label1.Size = new Size(194, 19);
-            label1.TabIndex = 0;
-            label1.Text = "Today's Customer Count";
+            btnVehicles.BackColor = Color.Transparent;
+            btnVehicles.FlatAppearance.BorderSize = 0;
+            btnVehicles.FlatStyle = FlatStyle.Flat;
+            btnVehicles.Font = new Font("Century Gothic", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            btnVehicles.ForeColor = Color.White;
+            btnVehicles.Image = (Image)resources.GetObject("btnVehicles.Image");
+            btnVehicles.Location = new Point(3, 357);
+            btnVehicles.Name = "btnVehicles";
+            btnVehicles.Size = new Size(284, 84);
+            btnVehicles.TabIndex = 3;
+            btnVehicles.Text = "        Vehicles";
+            btnVehicles.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnVehicles.UseVisualStyleBackColor = false;
+            btnVehicles.Click += btnVehicles_Click;
             // 
-            // lblTodayCustomerCount
+            // btnDashboard
             // 
-            lblTodayCustomerCount.AutoSize = true;
-            lblTodayCustomerCount.Font = new Font("Century Gothic", 27.75F, FontStyle.Bold, GraphicsUnit.Point);
-            lblTodayCustomerCount.Location = new Point(83, 48);
-            lblTodayCustomerCount.Name = "lblTodayCustomerCount";
-            lblTodayCustomerCount.Size = new Size(40, 44);
-            lblTodayCustomerCount.TabIndex = 1;
-            lblTodayCustomerCount.Text = "1";
+            btnDashboard.BackColor = Color.Transparent;
+            btnDashboard.FlatAppearance.BorderSize = 0;
+            btnDashboard.FlatStyle = FlatStyle.Flat;
+            btnDashboard.Font = new Font("Century Gothic", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            btnDashboard.ForeColor = Color.White;
+            btnDashboard.Image = (Image)resources.GetObject("btnDashboard.Image");
+            btnDashboard.Location = new Point(3, 226);
+            btnDashboard.Name = "btnDashboard";
+            btnDashboard.Size = new Size(284, 84);
+            btnDashboard.TabIndex = 2;
+            btnDashboard.Text = "        Dashboard";
+            btnDashboard.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnDashboard.UseVisualStyleBackColor = false;
+            btnDashboard.Click += btnDashboard_Click;
             // 
-            // panel4
+            // panel2
             // 
-            panel4.BackColor = Color.Transparent;
-            panel4.Controls.Add(lblVehiclesCount);
-            panel4.Controls.Add(label3);
-            panel4.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            panel4.ForeColor = Color.White;
-            panel4.Location = new Point(405, 3);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(200, 124);
-            panel4.TabIndex = 2;
-            // 
-            // lblVehiclesCount
-            // 
-            lblVehiclesCount.AutoSize = true;
-            lblVehiclesCount.Font = new Font("Century Gothic", 27.75F, FontStyle.Bold, GraphicsUnit.Point);
-            lblVehiclesCount.Location = new Point(83, 48);
-            lblVehiclesCount.Name = "lblVehiclesCount";
-            lblVehiclesCount.Size = new Size(40, 44);
-            lblVehiclesCount.TabIndex = 1;
-            lblVehiclesCount.Text = "1";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(3, 6);
-            label3.Name = "label3";
-            label3.Size = new Size(186, 19);
-            label3.TabIndex = 0;
-            label3.Text = "Today's Vehicles Count";
+            panel2.BackgroundImage = (Image)resources.GetObject("panel2.BackgroundImage");
+            panel2.Controls.Add(panel5);
+            panel2.Controls.Add(panel4);
+            panel2.Controls.Add(panel3);
+            panel2.Dock = DockStyle.Top;
+            panel2.Location = new Point(290, 0);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(917, 130);
+            panel2.TabIndex = 1;
             // 
             // panel5
             // 
@@ -233,6 +173,68 @@
             label5.TabIndex = 0;
             label5.Text = "Active Employee Count";
             // 
+            // panel4
+            // 
+            panel4.BackColor = Color.Transparent;
+            panel4.Controls.Add(lblVehiclesCount);
+            panel4.Controls.Add(label3);
+            panel4.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            panel4.ForeColor = Color.White;
+            panel4.Location = new Point(405, 3);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(200, 124);
+            panel4.TabIndex = 2;
+            // 
+            // lblVehiclesCount
+            // 
+            lblVehiclesCount.AutoSize = true;
+            lblVehiclesCount.Font = new Font("Century Gothic", 27.75F, FontStyle.Bold, GraphicsUnit.Point);
+            lblVehiclesCount.Location = new Point(83, 48);
+            lblVehiclesCount.Name = "lblVehiclesCount";
+            lblVehiclesCount.Size = new Size(40, 44);
+            lblVehiclesCount.TabIndex = 1;
+            lblVehiclesCount.Text = "1";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(3, 6);
+            label3.Name = "label3";
+            label3.Size = new Size(186, 19);
+            label3.TabIndex = 0;
+            label3.Text = "Today's Vehicles Count";
+            // 
+            // panel3
+            // 
+            panel3.BackColor = Color.Transparent;
+            panel3.Controls.Add(lblTodayCustomerCount);
+            panel3.Controls.Add(label1);
+            panel3.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            panel3.ForeColor = Color.White;
+            panel3.Location = new Point(123, 3);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(200, 124);
+            panel3.TabIndex = 0;
+            // 
+            // lblTodayCustomerCount
+            // 
+            lblTodayCustomerCount.AutoSize = true;
+            lblTodayCustomerCount.Font = new Font("Century Gothic", 27.75F, FontStyle.Bold, GraphicsUnit.Point);
+            lblTodayCustomerCount.Location = new Point(83, 48);
+            lblTodayCustomerCount.Name = "lblTodayCustomerCount";
+            lblTodayCustomerCount.Size = new Size(40, 44);
+            lblTodayCustomerCount.TabIndex = 1;
+            lblTodayCustomerCount.Text = "1";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(3, 6);
+            label1.Name = "label1";
+            label1.Size = new Size(194, 19);
+            label1.TabIndex = 0;
+            label1.Text = "Today's Customer Count";
+            // 
             // MainMenu
             // 
             AutoScaleDimensions = new SizeF(10F, 21F);
@@ -242,17 +244,19 @@
             Controls.Add(panel1);
             Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(4, 4, 4, 4);
+            IsMdiContainer = true;
+            Margin = new Padding(4);
             Name = "MainMenu";
             Text = "MainMenu";
+            Load += MainMenu_Load;
             panel1.ResumeLayout(false);
             panel2.ResumeLayout(false);
-            panel3.ResumeLayout(false);
-            panel3.PerformLayout();
-            panel4.ResumeLayout(false);
-            panel4.PerformLayout();
             panel5.ResumeLayout(false);
             panel5.PerformLayout();
+            panel4.ResumeLayout(false);
+            panel4.PerformLayout();
+            panel3.ResumeLayout(false);
+            panel3.PerformLayout();
             ResumeLayout(false);
         }
 
