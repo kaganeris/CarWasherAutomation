@@ -203,6 +203,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "AddQueue";
             Text = "AddQueue";
+            Load += AddQueue_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ResumeLayout(false);

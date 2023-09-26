@@ -16,12 +16,6 @@ namespace Program.UI.Forms
         {
             InitializeComponent();
         }
-
-        private void MainMenu_Load(object sender, EventArgs e)
-        {
-            DashboardShow();
-        }
-
         private void btnDashboard_Click(object sender, EventArgs e)
         {
             this.ActiveMdiChild.Close();
