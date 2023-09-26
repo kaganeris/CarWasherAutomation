@@ -9,6 +9,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Program.Business\Program.Business.csproj" />
+    <ProjectReference Include="..\Program.DAL\Program.DAL.csproj" />
+    <ProjectReference Include="..\Program.DATA\Program.DATA.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Update="Properties\Resources.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
