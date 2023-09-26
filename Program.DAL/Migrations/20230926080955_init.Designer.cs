@@ -12,7 +12,7 @@ using Program.DAL.Context;
 namespace Program.DAL.Migrations
 {
     [DbContext(typeof(ProjectContext))]
-    [Migration("20230925093947_init")]
+    [Migration("20230926080955_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -23,21 +23,6 @@ namespace Program.DAL.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
-
-            modelBuilder.Entity("MaterialWashingProcess", b =>
-                {
-                    b.Property<int>("MaterialID")
-                        .HasColumnType("int");
-
-                    b.Property<int>("WashingProcessesID")
-                        .HasColumnType("int");
-
-                    b.HasKey("MaterialID", "WashingProcessesID");
-
-                    b.HasIndex("WashingProcessesID");
-
-                    b.ToTable("MaterialWashingProcess");
-                });
 
             modelBuilder.Entity("Program.DATA.Entities.Customer", b =>
                 {
@@ -159,6 +144,29 @@ namespace Program.DAL.Migrations
                     b.HasIndex("SupplierID");
 
                     b.ToTable("Materials");
+                });
+
+            modelBuilder.Entity("Program.DATA.Entities.MaterialWashingProcess", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"), 1L, 1);
+
+                    b.Property<int>("MaterialID")
+                        .HasColumnType("int");
+
+                    b.Property<int>("WashingProcessID")
+                        .HasColumnType("int");
+
+                    b.HasKey("ID");
+
+                    b.HasIndex("MaterialID");
+
+                    b.HasIndex("WashingProcessID");
+
+                    b.ToTable("MaterialWashingProcess");
                 });
 
             modelBuilder.Entity("Program.DATA.Entities.Supplier", b =>
@@ -299,21 +307,6 @@ namespace Program.DAL.Migrations
                     b.ToTable("WashingProcesses");
                 });
 
-            modelBuilder.Entity("MaterialWashingProcess", b =>
-                {
-                    b.HasOne("Program.DATA.Entities.Material", null)
-                        .WithMany()
-                        .HasForeignKey("MaterialID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Program.DATA.Entities.WashingProcess", null)
-                        .WithMany()
-                        .HasForeignKey("WashingProcessesID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
             modelBuilder.Entity("Program.DATA.Entities.Material", b =>
                 {
                     b.HasOne("Program.DATA.Entities.Supplier", "Supplier")
@@ -323,6 +316,25 @@ namespace Program.DAL.Migrations
                         .IsRequired();
 
                     b.Navigation("Supplier");
+                });
+
+            modelBuilder.Entity("Program.DATA.Entities.MaterialWashingProcess", b =>
+                {
+                    b.HasOne("Program.DATA.Entities.Material", "Material")
+                        .WithMany("MaterialWashingProcesses")
+                        .HasForeignKey("MaterialID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Program.DATA.Entities.WashingProcess", "WashingProcess")
+                        .WithMany("MaterialWashingProcesses")
+                        .HasForeignKey("WashingProcessID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Material");
+
+                    b.Navigation("WashingProcess");
                 });
 
             modelBuilder.Entity("Program.DATA.Entities.Vehicle", b =>
@@ -365,6 +377,11 @@ namespace Program.DAL.Migrations
                     b.Navigation("WashingProcess");
                 });
 
+            modelBuilder.Entity("Program.DATA.Entities.Material", b =>
+                {
+                    b.Navigation("MaterialWashingProcesses");
+                });
+
             modelBuilder.Entity("Program.DATA.Entities.Supplier", b =>
                 {
                     b.Navigation("Materials");
@@ -374,6 +391,11 @@ namespace Program.DAL.Migrations
                 {
                     b.Navigation("WashingProcess")
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("Program.DATA.Entities.WashingProcess", b =>
+                {
+                    b.Navigation("MaterialWashingProcesses");
                 });
 #pragma warning restore 612, 618
         }

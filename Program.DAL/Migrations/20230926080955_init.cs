@@ -163,12 +163,14 @@ namespace Program.DAL.Migrations
                 name: "MaterialWashingProcess",
                 columns: table => new
                 {
+                    ID = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     MaterialID = table.Column<int>(type: "int", nullable: false),
-                    WashingProcessesID = table.Column<int>(type: "int", nullable: false)
+                    WashingProcessID = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_MaterialWashingProcess", x => new { x.MaterialID, x.WashingProcessesID });
+                    table.PrimaryKey("PK_MaterialWashingProcess", x => x.ID);
                     table.ForeignKey(
                         name: "FK_MaterialWashingProcess_Materials_MaterialID",
                         column: x => x.MaterialID,
@@ -176,8 +178,8 @@ namespace Program.DAL.Migrations
                         principalColumn: "ID",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_MaterialWashingProcess_WashingProcesses_WashingProcessesID",
-                        column: x => x.WashingProcessesID,
+                        name: "FK_MaterialWashingProcess_WashingProcesses_WashingProcessID",
+                        column: x => x.WashingProcessID,
                         principalTable: "WashingProcesses",
                         principalColumn: "ID",
                         onDelete: ReferentialAction.Cascade);
@@ -189,9 +191,14 @@ namespace Program.DAL.Migrations
                 column: "SupplierID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_MaterialWashingProcess_WashingProcessesID",
+                name: "IX_MaterialWashingProcess_MaterialID",
                 table: "MaterialWashingProcess",
-                column: "WashingProcessesID");
+                column: "MaterialID");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_MaterialWashingProcess_WashingProcessID",
+                table: "MaterialWashingProcess",
+                column: "WashingProcessID");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Vehicles_CustomerID",
