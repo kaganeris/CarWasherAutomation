@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Program.UI.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,19 @@ namespace Program.UI
         public MainMenu()
         {
             InitializeComponent();
+        }
+
+        private void btnCustomers_Click(object sender, EventArgs e)
+        {
+            AddQueue screen = new AddQueue();
+            screen.MdiParent = this;
+            screen.Dock = DockStyle.Fill;
+            DialogResult result = screen.ShowDialog();
+
+            if(result == DialogResult.OK)
+            {
+                //Yıkama sırası listesini yenile
+            }
         }
     }
 }

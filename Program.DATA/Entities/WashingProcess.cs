@@ -59,13 +59,13 @@ namespace Program.DATA.Entities
                 switch (ProcessType)
                 {
                     case ProcessType.Interior:
-                        washingPrice = washingPrice * 1.7M;
+                        washingPrice = washingPrice * 1.2M;
                         break;
                     case ProcessType.Exterior:
                         washingPrice = washingPrice * 1;
                         break;
                     case ProcessType.Full:
-                        washingPrice = washingPrice * 1.1M;
+                        washingPrice = washingPrice * 1.7M;
                         break;
                     default:
                         break;
