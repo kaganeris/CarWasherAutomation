@@ -1,3 +1,5 @@
+using Program.UI.Forms;
+
 namespace Program.UI
 {
     internal static class Program
