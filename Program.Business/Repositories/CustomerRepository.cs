@@ -31,14 +31,14 @@ namespace Program.Business.Repositories
             db.Customers.Add(customer);
             db.SaveChanges();
         }
-        public SubscribeType CheckSubscribeType(Customer customer)
+        public void CheckSubscribeType(Customer customer)
         {
-            if (VisitTimes(6,customer) > 15) return SubscribeType.Premium;
-            if (VisitTimes(3,customer) > 7) return SubscribeType.Classic;
-            if (VisitTimes(1,customer) > 3) return SubscribeType.Basic;
-            else  return SubscribeType.None;
+            if (VisitTimes(6, customer) > 15) customer.SubscribeType = SubscribeType.Premium;
+            if (VisitTimes(3, customer) > 7) customer.SubscribeType = SubscribeType.Classic;
+            if (VisitTimes(1, customer) > 3) customer.SubscribeType = SubscribeType.Basic;
+            else customer.SubscribeType = SubscribeType.None;
         }
-        public int VisitTimes (int month, Customer customer)
+        public int VisitTimes(int month, Customer customer)
         {
             return db.WashingProcesses
             .Include(x => x.Vehicle)

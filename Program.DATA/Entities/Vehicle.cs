@@ -9,7 +9,6 @@ namespace Program.DATA.Entities
 {
     public class Vehicle : BaseEntity
     {
-        //
         public int CustomerID { get; set; }
         public string? Brand { get; set; }
         public DateTime? ProductionDate { get; set; }

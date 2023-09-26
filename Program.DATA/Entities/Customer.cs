@@ -9,19 +9,15 @@ namespace Program.DATA.Entities
 {
     public class Customer : BaseEntity
     {
+        public Customer()
+        {
+            CreatedDate = DateTime.Now;
+            Vehicles = new List<Vehicle>();
+        }
         public string Name { get; set; }
         public bool IsSubscriber { get; set; }
 
-        private SubscribeType subscribeType;
-
-        public SubscribeType SubscribeType
-        {
-            get { return subscribeType; }
-            set 
-            { 
-                
-            }
-        }
+        public SubscribeType SubscribeType { get; set; } = SubscribeType.None;
         public DateTime? SubscribeDate { get; set; }
         public DateTime? SubscribeEndingDate { get; set; }
         public List<Vehicle> Vehicles { get; set; }
