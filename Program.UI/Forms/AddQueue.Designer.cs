@@ -69,7 +69,7 @@
             lvCustomers.FullRowSelect = true;
             lvCustomers.Location = new Point(407, 12);
             lvCustomers.Name = "lvCustomers";
-            lvCustomers.Size = new Size(463, 508);
+            lvCustomers.Size = new Size(463, 506);
             lvCustomers.TabIndex = 3;
             lvCustomers.UseCompatibleStateImageBehavior = false;
             lvCustomers.View = View.Details;
