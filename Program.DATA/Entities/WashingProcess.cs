@@ -18,61 +18,60 @@ namespace Program.DATA.Entities
         public int MaterialID { get; set; }
         public bool IsQueue { get; set; }
 
-        private decimal basePrice= 100;
+        private decimal basePrice = 100;
 
         private decimal washingPrice;
 
         public decimal WashingPrice
         {
             get { return washingPrice; }
-            set 
-            { 
-                if(Vehicle.BodyType == BodyType.Sedan)
+            set
+            {
+                switch (Vehicle.BodyType)
                 {
-                    washingPrice = basePrice * 1.2M;
+                    case BodyType.Sedan:
+                        washingPrice = basePrice * 1.2M;
+                        break;
+                    case BodyType.Hatchback:
+                        washingPrice = basePrice * 1;
+                        break;
+                    case BodyType.SUV:
+                        washingPrice = basePrice * 1.9M;
+                        break;
+                    case BodyType.StationVagon:
+                        washingPrice = basePrice * 1.8M;
+                        break;
+                    case BodyType.Pickup:
+                        washingPrice = basePrice * 2M;
+                        break;
+                    case BodyType.Minivan:
+                        washingPrice = basePrice * 2.1M;
+                        break;
+                    case BodyType.Panelvan:
+                        washingPrice = basePrice * 2.1M;
+                        break;
+                    case BodyType.Coupe:
+                        washingPrice = basePrice * 1.1M;
+                        break;
+                    default:
+                        break;
                 }
-                else if(Vehicle.BodyType == BodyType.Hatchback)
+                switch (ProcessType)
                 {
-                    washingPrice = basePrice * 1;
-                }
-                else if (Vehicle.BodyType == BodyType.SUV)
-                {
-                    washingPrice = basePrice * 1.9M;
-                }
-                else if (Vehicle.BodyType == BodyType.StationVagon)
-                {
-                    washingPrice = basePrice * 1.8M;
-                }
-                else if (Vehicle.BodyType == BodyType.Pickup)
-                {
-                    washingPrice = basePrice * 2M;
-                }
-                else if (Vehicle.BodyType == BodyType.Minivan)
-                {
-                    washingPrice = basePrice * 2.1M;
-                }
-                else if (Vehicle.BodyType == BodyType.Panelvan)
-                {
-                    washingPrice = basePrice * 2.1M;
-                }
-                else if (Vehicle.BodyType == BodyType.Coupe)
-                {
-                    washingPrice = basePrice * 1.1M;
+                    case ProcessType.Interior:
+                        washingPrice = washingPrice * 1.7M;
+                        break;
+                    case ProcessType.Exterior:
+                        washingPrice = washingPrice * 1;
+                        break;
+                    case ProcessType.Full:
+                        washingPrice = washingPrice * 1.1M;
+                        break;
+                    default:
+                        break;
                 }
 
-                if(ProcessType == ProcessType.Full)
-                {
-                    washingPrice = washingPrice * 1.7M;
-                }
-                else if (ProcessType == ProcessType.Exterior)
-                {
-                    washingPrice = washingPrice * 1;
-                }
-                else if (ProcessType == ProcessType.Interior)
-                {
-                    washingPrice = washingPrice * 1.1M;
-                }
-                washingPrice = washingPrice * (decimal)(1-discount);
+                washingPrice = washingPrice * (decimal)(1 - discount);
             }
         }
         private double discount = 1;
@@ -80,9 +79,9 @@ namespace Program.DATA.Entities
         public double Discount
         {
             get { return discount; }
-            set 
-            { 
-                if(Vehicle.Customer.IsSubscriber == true)
+            set
+            {
+                if (Vehicle.Customer.IsSubscriber == true)
                 {
                     if (Vehicle.Customer.SubscribeType == SubscribeType.Basic)
                         discount = 0.1;
