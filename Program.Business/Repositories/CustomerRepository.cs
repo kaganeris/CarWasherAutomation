@@ -33,19 +33,12 @@ namespace Program.Business.Repositories
         }
         public SubscribeType CheckSubscribeType(Customer customer)
         {
-            int VisitTimesLastSixMonths = 
-                db.WashingProcesses
-                .Include(x=>x.Vehicle)
-                .Where(x=>x.Vehicle.CustomerID==customer.ID && x.CreatedDate>DateTime.Now.AddMonths(-6))
-                .Count();
-
-            int VisitTimesLastThreeMonths =
-                db.WashingProcesses
-                .Include(x => x.Vehicle)
-                .Where(x => x.Vehicle.CustomerID == customer.ID && x.CreatedDate > DateTime.Now.AddMonths(-3))
-                .Count();
+            if (VisitTimes(6,customer) > 15) return SubscribeType.Premium;
+            if (VisitTimes(3,customer) > 7) return SubscribeType.Classic;
+            if (VisitTimes(1,customer) > 3) return SubscribeType.Basic;
+            else  return SubscribeType.None;
         }
-        public int VisitTimes (int month)
+        public int VisitTimes (int month, Customer customer)
         {
             return db.WashingProcesses
             .Include(x => x.Vehicle)
