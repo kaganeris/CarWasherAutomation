@@ -90,7 +90,7 @@
             btnCustomers.Font = new Font("Century Gothic", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             btnCustomers.ForeColor = Color.White;
             btnCustomers.Image = (Image)resources.GetObject("btnCustomers.Image");
-            btnCustomers.Location = new Point(3, 595);
+            btnCustomers.Location = new Point(3, 585);
             btnCustomers.Name = "btnCustomers";
             btnCustomers.Size = new Size(284, 84);
             btnCustomers.TabIndex = 3;
