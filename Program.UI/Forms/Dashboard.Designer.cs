@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            SuspendLayout();
+            
             // 
             // Dashboard
             // 
@@ -40,9 +40,13 @@
             Margin = new Padding(4);
             Name = "Dashboard";
             Text = "Dashboard";
+            Load += Dashboard_Load;
             ResumeLayout(false);
         }
 
         #endregion
+
+        private System.CodeDom.CodeTypeReference chart1;
+        private System.CodeDom.CodeTypeReference chart2;
     }
 }

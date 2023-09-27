@@ -15,6 +15,7 @@ namespace Program.UI.Forms
 {
     public partial class AddQueue : Form
     {
+
         public AddQueue(MainMenu _anaform)
         {
             anaform = _anaform;
