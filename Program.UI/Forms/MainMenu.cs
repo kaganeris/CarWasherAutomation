@@ -64,12 +64,5 @@ namespace Program.UI.Forms
             vehicles.Show();
         }
 
-        private void btnEmployees_Click(object sender, EventArgs e)
-        {
-            Employees employees = new Employees();
-            employees.MdiParent = this;
-            employees.Dock = DockStyle.Fill;
-            employees.Show();
-        }
     }
 }

@@ -30,11 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainMenu));
             panel1 = new Panel();
-            btnMaterialStock = new Button();
-            btnWasherStatus = new Button();
             btnEmployees = new Button();
             btnCustomers = new Button();
-            btnAddQueue = new Button();
+            btnVehicles = new Button();
             btnDashboard = new Button();
             panel2 = new Panel();
             panel5 = new Panel();
@@ -56,50 +54,15 @@
             // panel1
             // 
             panel1.BackgroundImage = (Image)resources.GetObject("panel1.BackgroundImage");
-            panel1.Controls.Add(btnMaterialStock);
-            panel1.Controls.Add(btnWasherStatus);
             panel1.Controls.Add(btnEmployees);
             panel1.Controls.Add(btnCustomers);
-            panel1.Controls.Add(btnAddQueue);
+            panel1.Controls.Add(btnVehicles);
             panel1.Controls.Add(btnDashboard);
             panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(290, 846);
             panel1.TabIndex = 0;
-            // 
-            // btnMaterialStock
-            // 
-            btnMaterialStock.BackColor = Color.Transparent;
-            btnMaterialStock.FlatAppearance.BorderSize = 0;
-            btnMaterialStock.FlatStyle = FlatStyle.Flat;
-            btnMaterialStock.Font = new Font("Century Gothic", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            btnMaterialStock.ForeColor = Color.White;
-            btnMaterialStock.Image = (Image)resources.GetObject("btnMaterialStock.Image");
-            btnMaterialStock.Location = new Point(6, 727);
-            btnMaterialStock.Name = "btnMaterialStock";
-            btnMaterialStock.Size = new Size(284, 84);
-            btnMaterialStock.TabIndex = 4;
-            btnMaterialStock.Text = "        Material Stock";
-            btnMaterialStock.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnMaterialStock.UseVisualStyleBackColor = false;
-            // 
-            // btnWasherStatus
-            // 
-            btnWasherStatus.BackColor = Color.Transparent;
-            btnWasherStatus.FlatAppearance.BorderSize = 0;
-            btnWasherStatus.FlatStyle = FlatStyle.Flat;
-            btnWasherStatus.Font = new Font("Century Gothic", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            btnWasherStatus.ForeColor = Color.White;
-            btnWasherStatus.Image = (Image)resources.GetObject("btnWasherStatus.Image");
-            btnWasherStatus.Location = new Point(6, 284);
-            btnWasherStatus.Name = "btnWasherStatus";
-            btnWasherStatus.Size = new Size(284, 84);
-            btnWasherStatus.TabIndex = 4;
-            btnWasherStatus.Text = "        Washer Status";
-            btnWasherStatus.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnWasherStatus.UseVisualStyleBackColor = false;
-            btnWasherStatus.Click += btnWasherStatus_Click;
             // 
             // btnEmployees
             // 
@@ -109,14 +72,13 @@
             btnEmployees.Font = new Font("Century Gothic", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             btnEmployees.ForeColor = Color.White;
             btnEmployees.Image = (Image)resources.GetObject("btnEmployees.Image");
-            btnEmployees.Location = new Point(3, 625);
+            btnEmployees.Location = new Point(3, 616);
             btnEmployees.Name = "btnEmployees";
             btnEmployees.Size = new Size(284, 84);
             btnEmployees.TabIndex = 3;
             btnEmployees.Text = "        Employees";
             btnEmployees.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnEmployees.UseVisualStyleBackColor = false;
-            btnEmployees.Click += btnEmployees_Click;
             // 
             // btnCustomers
             // 
@@ -126,31 +88,29 @@
             btnCustomers.Font = new Font("Century Gothic", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             btnCustomers.ForeColor = Color.White;
             btnCustomers.Image = (Image)resources.GetObject("btnCustomers.Image");
-            btnCustomers.Location = new Point(3, 518);
+            btnCustomers.Location = new Point(6, 486);
             btnCustomers.Name = "btnCustomers";
             btnCustomers.Size = new Size(284, 84);
             btnCustomers.TabIndex = 3;
             btnCustomers.Text = "        Customers";
             btnCustomers.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnCustomers.UseVisualStyleBackColor = false;
-            btnCustomers.Click += btnCustomers_Click;
             // 
-            // btnAddQueue
+            // btnVehicles
             // 
-            btnAddQueue.BackColor = Color.Transparent;
-            btnAddQueue.FlatAppearance.BorderSize = 0;
-            btnAddQueue.FlatStyle = FlatStyle.Flat;
-            btnAddQueue.Font = new Font("Century Gothic", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            btnAddQueue.ForeColor = Color.White;
-            btnAddQueue.Image = (Image)resources.GetObject("btnAddQueue.Image");
-            btnAddQueue.Location = new Point(6, 405);
-            btnAddQueue.Name = "btnAddQueue";
-            btnAddQueue.Size = new Size(284, 84);
-            btnAddQueue.TabIndex = 3;
-            btnAddQueue.Text = "        Add Queue";
-            btnAddQueue.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnAddQueue.UseVisualStyleBackColor = false;
-            btnAddQueue.Click += btnAddQueue_Click;
+            btnVehicles.BackColor = Color.Transparent;
+            btnVehicles.FlatAppearance.BorderSize = 0;
+            btnVehicles.FlatStyle = FlatStyle.Flat;
+            btnVehicles.Font = new Font("Century Gothic", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            btnVehicles.ForeColor = Color.White;
+            btnVehicles.Image = (Image)resources.GetObject("btnVehicles.Image");
+            btnVehicles.Location = new Point(3, 357);
+            btnVehicles.Name = "btnVehicles";
+            btnVehicles.Size = new Size(284, 84);
+            btnVehicles.TabIndex = 3;
+            btnVehicles.Text = "        Vehicles";
+            btnVehicles.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnVehicles.UseVisualStyleBackColor = false;
             // 
             // btnDashboard
             // 
@@ -160,7 +120,7 @@
             btnDashboard.Font = new Font("Century Gothic", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             btnDashboard.ForeColor = Color.White;
             btnDashboard.Image = (Image)resources.GetObject("btnDashboard.Image");
-            btnDashboard.Location = new Point(6, 163);
+            btnDashboard.Location = new Point(3, 226);
             btnDashboard.Name = "btnDashboard";
             btnDashboard.Size = new Size(284, 84);
             btnDashboard.TabIndex = 2;
@@ -287,7 +247,6 @@
             Margin = new Padding(4);
             Name = "MainMenu";
             Text = "MainMenu";
-            Load += MainMenu_Load;
             panel1.ResumeLayout(false);
             panel2.ResumeLayout(false);
             panel5.ResumeLayout(false);
@@ -306,7 +265,7 @@
         private Button btnDashboard;
         private Button btnEmployees;
         private Button btnCustomers;
-        private Button btnAddQueue;
+        private Button btnVehicles;
         private Panel panel3;
         private Label lblTodayCustomerCount;
         private Label label1;
@@ -316,7 +275,5 @@
         private Panel panel4;
         private Label lblVehiclesCount;
         private Label label3;
-        private Button btnWasherStatus;
-        private Button btnMaterialStock;
     }
 }
