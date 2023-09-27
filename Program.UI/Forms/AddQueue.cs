@@ -105,5 +105,11 @@ namespace Program.UI.Forms
             wp.EmployeeID = 2;
             vehicleRep = new VehicleRepository();
         }
+        CustomerRepository customerRep;
+        private void btnCheckSubs_Click(object sender, EventArgs e)
+        {
+            customerRep = new CustomerRepository();
+            customerRep.CheckSubscribeType(SelectedVehicle.Customer);
+        }
     }
 }

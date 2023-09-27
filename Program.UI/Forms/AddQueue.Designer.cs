@@ -43,6 +43,7 @@
             rbExterior = new RadioButton();
             rbFull = new RadioButton();
             groupBox1 = new GroupBox();
+            btnCheckSubs = new Button();
             lblPlate = new Label();
             groupBox1.SuspendLayout();
             SuspendLayout();
@@ -74,7 +75,7 @@
             lvCustomers.Location = new Point(444, 13);
             lvCustomers.Margin = new Padding(4, 3, 4, 3);
             lvCustomers.Name = "lvCustomers";
-            lvCustomers.Size = new Size(482, 687);
+            lvCustomers.Size = new Size(453, 687);
             lvCustomers.TabIndex = 3;
             lvCustomers.UseCompatibleStateImageBehavior = false;
             lvCustomers.View = View.Details;
@@ -109,7 +110,7 @@
             // lblBrand
             // 
             lblBrand.AutoSize = true;
-            lblBrand.Location = new Point(30, 150);
+            lblBrand.Location = new Point(30, 151);
             lblBrand.Margin = new Padding(4, 0, 4, 0);
             lblBrand.Name = "lblBrand";
             lblBrand.Size = new Size(70, 21);
@@ -119,7 +120,7 @@
             // lblModel
             // 
             lblModel.AutoSize = true;
-            lblModel.Location = new Point(30, 207);
+            lblModel.Location = new Point(30, 198);
             lblModel.Margin = new Padding(4, 0, 4, 0);
             lblModel.Name = "lblModel";
             lblModel.Size = new Size(76, 21);
@@ -129,7 +130,7 @@
             // lblBodyType
             // 
             lblBodyType.AutoSize = true;
-            lblBodyType.Location = new Point(30, 264);
+            lblBodyType.Location = new Point(16, 245);
             lblBodyType.Margin = new Padding(4, 0, 4, 0);
             lblBodyType.Name = "lblBodyType";
             lblBodyType.Size = new Size(108, 21);
@@ -139,7 +140,7 @@
             // lblPrice
             // 
             lblPrice.AutoSize = true;
-            lblPrice.Location = new Point(238, 516);
+            lblPrice.Location = new Point(183, 516);
             lblPrice.Margin = new Padding(4, 0, 4, 0);
             lblPrice.Name = "lblPrice";
             lblPrice.Size = new Size(63, 21);
@@ -151,7 +152,7 @@
             rbInterior.AutoSize = true;
             rbInterior.Checked = true;
             rbInterior.Enabled = false;
-            rbInterior.Location = new Point(30, 324);
+            rbInterior.Location = new Point(26, 320);
             rbInterior.Margin = new Padding(4, 3, 4, 3);
             rbInterior.Name = "rbInterior";
             rbInterior.Size = new Size(91, 25);
@@ -165,7 +166,7 @@
             // 
             rbExterior.AutoSize = true;
             rbExterior.Enabled = false;
-            rbExterior.Location = new Point(30, 393);
+            rbExterior.Location = new Point(26, 372);
             rbExterior.Margin = new Padding(4, 3, 4, 3);
             rbExterior.Name = "rbExterior";
             rbExterior.Size = new Size(94, 25);
@@ -179,7 +180,7 @@
             // 
             rbFull.AutoSize = true;
             rbFull.Enabled = false;
-            rbFull.Location = new Point(30, 462);
+            rbFull.Location = new Point(26, 424);
             rbFull.Margin = new Padding(4, 3, 4, 3);
             rbFull.Name = "rbFull";
             rbFull.Size = new Size(57, 25);
@@ -191,6 +192,7 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(btnCheckSubs);
             groupBox1.Controls.Add(lblPlate);
             groupBox1.Controls.Add(txtSearch);
             groupBox1.Controls.Add(rbFull);
@@ -209,6 +211,16 @@
             groupBox1.Size = new Size(435, 687);
             groupBox1.TabIndex = 12;
             groupBox1.TabStop = false;
+            // 
+            // btnCheckSubs
+            // 
+            btnCheckSubs.Location = new Point(16, 495);
+            btnCheckSubs.Name = "btnCheckSubs";
+            btnCheckSubs.Size = new Size(138, 62);
+            btnCheckSubs.TabIndex = 13;
+            btnCheckSubs.Text = "Check Subscription";
+            btnCheckSubs.UseVisualStyleBackColor = true;
+            btnCheckSubs.Click += btnCheckSubs_Click;
             // 
             // lblPlate
             // 
@@ -257,5 +269,6 @@
         private RadioButton rbFull;
         private GroupBox groupBox1;
         private Label lblPlate;
+        private Button btnCheckSubs;
     }
 }
