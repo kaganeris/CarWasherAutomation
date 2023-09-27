@@ -1,4 +1,5 @@
-﻿using Program.DAL.Context;
+﻿using Microsoft.EntityFrameworkCore;
+using Program.DAL.Context;
 using Program.DATA.Entities;
 using Program.DATA.Enums;
 using System;
@@ -38,13 +39,14 @@ namespace Program.Business.Repositories
         public List<Vehicle> SearchVehicles(string text)
         {
             return db.Vehicles
+                .Include(x=>x.Customer)
                 .Where(x=> x.Customer.Name.Contains(text) || x.Plate.StartsWith(text))
                 .Where(x=>x.IsActive==true)
                 .ToList();
         }
         public decimal GetPrice(Vehicle vehicle,string ProcessType)
         {
-            decimal washingPrice =0, basePrice = 100,discount=1;
+            decimal washingPrice =0, basePrice = 100,discount=0;
             switch (vehicle.BodyType)
             {
                 case BodyType.Sedan:

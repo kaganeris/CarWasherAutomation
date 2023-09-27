@@ -18,14 +18,14 @@ namespace Program.UI.Forms
         public NewVehicle()
         {
             InitializeComponent();
+            vehicleRep = new VehicleRepository();
         }
         Customer SelectedCustomer;
         VehicleRepository vehicleRep;
         private void NewVehicle_Load(object sender, EventArgs e)
         {
-            string[] bodyTypes = Enum.GetValues(typeof(BodyType)).Cast<string>().ToArray();
             cmbBodyTypes.Items.Clear();
-            cmbBodyTypes.Items.AddRange(bodyTypes);
+            cmbBodyTypes.DataSource = Enum.GetValues(typeof(BodyType));
         }
 
         private void rbExistingCustomer_CheckedChanged(object sender, EventArgs e)
@@ -43,7 +43,7 @@ namespace Program.UI.Forms
             if (rbNewCustomer.Checked)
             {
                 lvCustomers.Visible = false;
-                lblSearch.Text = "Customer Name: ";
+                lblSearch.Text = "Name: ";
             }
         }
 
@@ -55,10 +55,12 @@ namespace Program.UI.Forms
                 if (txtSearch.Text == string.Empty) lvCustomers.Items.Clear();
                 else
                 {
+                    vehicleRep = new VehicleRepository();
+                    lvCustomers.Items.Clear();
                     foreach (Vehicle vehicle in vehicleRep.SearchVehicles(txtSearch.Text))
                     {
                         index++;
-                        string[] arr = { index.ToString(), vehicle.Customer.Name };
+                        string[] arr = { index.ToString(), vehicle.Customer.Name, vehicle.Plate};
                         ListViewItem lvi = new ListViewItem(arr);
                         lvCustomers.Items.Add(lvi);
                         lvi.Tag = vehicle;
@@ -87,26 +89,32 @@ namespace Program.UI.Forms
                 if (rbExistingCustomer.Checked && SelectedVehicle != null)
                 {
                     VehicleToAdd.CustomerID = SelectedVehicle.CustomerID;
-                    VehicleToAdd.Customer=SelectedVehicle.Customer;
                     vehicleRep.Add(VehicleToAdd);
                     MessageBox.Show("Adding Vehicle is Successful", "Completed", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    txtBrand.Text = string.Empty;
+                    txtModel.Text = string.Empty;
+                    txtPlate.Text = string.Empty;
+                    txtSearch.Text = string.Empty;
                 }
                 else if (rbNewCustomer.Checked && !string.IsNullOrEmpty(txtSearch.Text))
                 {
                     Customer customer = new Customer();
-                    customer.Name= txtSearch.Text;
-                    customerRep=new CustomerRepository();
+                    customer.Name = txtSearch.Text;
+                    customerRep = new CustomerRepository();
                     customerRep.Add(customer);
                     VehicleToAdd.CustomerID = customer.ID;
-                    VehicleToAdd.Customer = customer;
                     vehicleRep.Add(VehicleToAdd);
                     MessageBox.Show("Adding Vehicle and Customer is Successful", "Completed", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    txtBrand.Text = string.Empty;
+                    txtModel.Text = string.Empty;
+                    txtPlate.Text = string.Empty;
+                    txtSearch.Text = string.Empty;
                 }
                 else
                 {
-                    MessageBox.Show("Please Choose a Customer or Create a New Customer","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                    MessageBox.Show("Please Choose a Customer or Create a New Customer", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                
+
             }
             else
             {
