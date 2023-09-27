@@ -1,4 +1,5 @@
-﻿using Program.DAL.Context;
+﻿using Microsoft.EntityFrameworkCore;
+using Program.DAL.Context;
 using Program.DATA.Entities;
 using System;
 using System.Collections.Generic;
@@ -32,6 +33,10 @@ namespace Program.Business.Repositories
             employee.IsActive = false;
             db.Employees.Add(employee);
             db.SaveChanges();
+        }
+        public List<Employee> GetAllEmployees()
+        {
+            return db.Employees.AsNoTracking().ToList();
         }
     }
 }
