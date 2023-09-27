@@ -32,7 +32,7 @@
             panel1 = new Panel();
             btnEmployees = new Button();
             btnCustomers = new Button();
-            btnVehicles = new Button();
+            btnAddQueue = new Button();
             btnDashboard = new Button();
             panel2 = new Panel();
             panel5 = new Panel();
@@ -44,6 +44,7 @@
             panel3 = new Panel();
             lblTodayCustomerCount = new Label();
             label1 = new Label();
+            btnWasherStatus = new Button();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             panel5.SuspendLayout();
@@ -54,9 +55,10 @@
             // panel1
             // 
             panel1.BackgroundImage = (Image)resources.GetObject("panel1.BackgroundImage");
+            panel1.Controls.Add(btnWasherStatus);
             panel1.Controls.Add(btnEmployees);
             panel1.Controls.Add(btnCustomers);
-            panel1.Controls.Add(btnVehicles);
+            panel1.Controls.Add(btnAddQueue);
             panel1.Controls.Add(btnDashboard);
             panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 0);
@@ -72,7 +74,7 @@
             btnEmployees.Font = new Font("Century Gothic", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             btnEmployees.ForeColor = Color.White;
             btnEmployees.Image = (Image)resources.GetObject("btnEmployees.Image");
-            btnEmployees.Location = new Point(3, 616);
+            btnEmployees.Location = new Point(3, 696);
             btnEmployees.Name = "btnEmployees";
             btnEmployees.Size = new Size(284, 84);
             btnEmployees.TabIndex = 3;
@@ -88,7 +90,7 @@
             btnCustomers.Font = new Font("Century Gothic", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             btnCustomers.ForeColor = Color.White;
             btnCustomers.Image = (Image)resources.GetObject("btnCustomers.Image");
-            btnCustomers.Location = new Point(6, 486);
+            btnCustomers.Location = new Point(3, 595);
             btnCustomers.Name = "btnCustomers";
             btnCustomers.Size = new Size(284, 84);
             btnCustomers.TabIndex = 3;
@@ -96,22 +98,22 @@
             btnCustomers.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnCustomers.UseVisualStyleBackColor = false;
             // 
-            // btnVehicles
+            // btnAddQueue
             // 
-            btnVehicles.BackColor = Color.Transparent;
-            btnVehicles.FlatAppearance.BorderSize = 0;
-            btnVehicles.FlatStyle = FlatStyle.Flat;
-            btnVehicles.Font = new Font("Century Gothic", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            btnVehicles.ForeColor = Color.White;
-            btnVehicles.Image = (Image)resources.GetObject("btnVehicles.Image");
-            btnVehicles.Location = new Point(3, 357);
-            btnVehicles.Name = "btnVehicles";
-            btnVehicles.Size = new Size(284, 84);
-            btnVehicles.TabIndex = 3;
-            btnVehicles.Text = "        Vehicles";
-            btnVehicles.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnVehicles.UseVisualStyleBackColor = false;
-            btnVehicles.Click += btnVehicles_Click;
+            btnAddQueue.BackColor = Color.Transparent;
+            btnAddQueue.FlatAppearance.BorderSize = 0;
+            btnAddQueue.FlatStyle = FlatStyle.Flat;
+            btnAddQueue.Font = new Font("Century Gothic", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            btnAddQueue.ForeColor = Color.White;
+            btnAddQueue.Image = (Image)resources.GetObject("btnAddQueue.Image");
+            btnAddQueue.Location = new Point(3, 453);
+            btnAddQueue.Name = "btnAddQueue";
+            btnAddQueue.Size = new Size(284, 84);
+            btnAddQueue.TabIndex = 3;
+            btnAddQueue.Text = "        Add Queue";
+            btnAddQueue.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnAddQueue.UseVisualStyleBackColor = false;
+            btnAddQueue.Click += btnVehicles_Click;
             // 
             // btnDashboard
             // 
@@ -121,7 +123,7 @@
             btnDashboard.Font = new Font("Century Gothic", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             btnDashboard.ForeColor = Color.White;
             btnDashboard.Image = (Image)resources.GetObject("btnDashboard.Image");
-            btnDashboard.Location = new Point(3, 226);
+            btnDashboard.Location = new Point(3, 215);
             btnDashboard.Name = "btnDashboard";
             btnDashboard.Size = new Size(284, 84);
             btnDashboard.TabIndex = 2;
@@ -235,6 +237,22 @@
             label1.TabIndex = 0;
             label1.Text = "Today's Customer Count";
             // 
+            // btnWasherStatus
+            // 
+            btnWasherStatus.BackColor = Color.Transparent;
+            btnWasherStatus.FlatAppearance.BorderSize = 0;
+            btnWasherStatus.FlatStyle = FlatStyle.Flat;
+            btnWasherStatus.Font = new Font("Century Gothic", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            btnWasherStatus.ForeColor = Color.White;
+            btnWasherStatus.Image = (Image)resources.GetObject("btnWasherStatus.Image");
+            btnWasherStatus.Location = new Point(3, 332);
+            btnWasherStatus.Name = "btnWasherStatus";
+            btnWasherStatus.Size = new Size(284, 84);
+            btnWasherStatus.TabIndex = 4;
+            btnWasherStatus.Text = "        Washer Status";
+            btnWasherStatus.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnWasherStatus.UseVisualStyleBackColor = false;
+            // 
             // MainMenu
             // 
             AutoScaleDimensions = new SizeF(10F, 21F);
@@ -267,7 +285,7 @@
         private Button btnDashboard;
         private Button btnEmployees;
         private Button btnCustomers;
-        private Button btnVehicles;
+        private Button btnAddQueue;
         private Panel panel3;
         private Label lblTodayCustomerCount;
         private Label label1;
@@ -277,5 +295,6 @@
         private Panel panel4;
         private Label lblVehiclesCount;
         private Label label3;
+        private Button btnWasherStatus;
     }
 }
