@@ -57,37 +57,41 @@
             grbCustomer.Controls.Add(lblSearch);
             grbCustomer.Controls.Add(rbNewCustomer);
             grbCustomer.Controls.Add(rbExistingCustomer);
-            grbCustomer.Location = new Point(16, 19);
+            grbCustomer.Location = new Point(24, 22);
+            grbCustomer.Margin = new Padding(4, 3, 4, 3);
             grbCustomer.Name = "grbCustomer";
-            grbCustomer.Size = new Size(442, 206);
+            grbCustomer.Padding = new Padding(4, 3, 4, 3);
+            grbCustomer.Size = new Size(409, 237);
             grbCustomer.TabIndex = 14;
             grbCustomer.TabStop = false;
             grbCustomer.Text = "Select or Add Customer";
             // 
             // txtSearch
             // 
-            txtSearch.Location = new Point(98, 110);
+            txtSearch.Location = new Point(147, 126);
+            txtSearch.Margin = new Padding(4, 3, 4, 3);
             txtSearch.Name = "txtSearch";
-            txtSearch.Size = new Size(283, 27);
+            txtSearch.Size = new Size(193, 32);
             txtSearch.TabIndex = 0;
             txtSearch.TextChanged += txtSearch_TextChanged;
             // 
             // lblSearch
             // 
             lblSearch.AutoSize = true;
-            lblSearch.Location = new Point(19, 113);
+            lblSearch.Location = new Point(28, 130);
+            lblSearch.Margin = new Padding(4, 0, 4, 0);
             lblSearch.Name = "lblSearch";
-            lblSearch.Size = new Size(53, 20);
+            lblSearch.Size = new Size(78, 23);
             lblSearch.TabIndex = 2;
             lblSearch.Text = "Search";
             // 
             // rbNewCustomer
             // 
             rbNewCustomer.AutoSize = true;
-            rbNewCustomer.Enabled = false;
-            rbNewCustomer.Location = new Point(22, 69);
+            rbNewCustomer.Location = new Point(33, 79);
+            rbNewCustomer.Margin = new Padding(4, 3, 4, 3);
             rbNewCustomer.Name = "rbNewCustomer";
-            rbNewCustomer.Size = new Size(194, 24);
+            rbNewCustomer.Size = new Size(271, 27);
             rbNewCustomer.TabIndex = 10;
             rbNewCustomer.TabStop = true;
             rbNewCustomer.Text = "Add With New Customer";
@@ -98,10 +102,10 @@
             // 
             rbExistingCustomer.AutoSize = true;
             rbExistingCustomer.Checked = true;
-            rbExistingCustomer.Enabled = false;
-            rbExistingCustomer.Location = new Point(22, 39);
+            rbExistingCustomer.Location = new Point(33, 45);
+            rbExistingCustomer.Margin = new Padding(4, 3, 4, 3);
             rbExistingCustomer.Name = "rbExistingCustomer";
-            rbExistingCustomer.Size = new Size(222, 24);
+            rbExistingCustomer.Size = new Size(307, 27);
             rbExistingCustomer.TabIndex = 9;
             rbExistingCustomer.TabStop = true;
             rbExistingCustomer.Text = "Add To An Existing Customer";
@@ -111,16 +115,18 @@
             // cmbBodyTypes
             // 
             cmbBodyTypes.FormattingEnabled = true;
-            cmbBodyTypes.Location = new Point(125, 351);
+            cmbBodyTypes.Location = new Point(143, 269);
+            cmbBodyTypes.Margin = new Padding(4, 3, 4, 3);
             cmbBodyTypes.Name = "cmbBodyTypes";
-            cmbBodyTypes.Size = new Size(250, 28);
+            cmbBodyTypes.Size = new Size(217, 31);
             cmbBodyTypes.TabIndex = 11;
             // 
             // btnAdd
             // 
-            btnAdd.Location = new Point(161, 410);
+            btnAdd.Location = new Point(105, 342);
+            btnAdd.Margin = new Padding(4, 3, 4, 3);
             btnAdd.Name = "btnAdd";
-            btnAdd.Size = new Size(121, 35);
+            btnAdd.Size = new Size(182, 40);
             btnAdd.TabIndex = 4;
             btnAdd.Text = "Add Vehicle";
             btnAdd.UseVisualStyleBackColor = true;
@@ -129,27 +135,30 @@
             // lblBrand
             // 
             lblBrand.AutoSize = true;
-            lblBrand.Location = new Point(33, 154);
+            lblBrand.Location = new Point(19, 132);
+            lblBrand.Margin = new Padding(4, 0, 4, 0);
             lblBrand.Name = "lblBrand";
-            lblBrand.Size = new Size(55, 20);
+            lblBrand.Size = new Size(78, 23);
             lblBrand.TabIndex = 5;
             lblBrand.Text = "Brand: ";
             // 
             // lblModel
             // 
             lblModel.AutoSize = true;
-            lblModel.Location = new Point(29, 254);
+            lblModel.Location = new Point(19, 202);
+            lblModel.Margin = new Padding(4, 0, 4, 0);
             lblModel.Name = "lblModel";
-            lblModel.Size = new Size(59, 20);
+            lblModel.Size = new Size(83, 23);
             lblModel.TabIndex = 6;
             lblModel.Text = "Model: ";
             // 
             // lblBodyType
             // 
             lblBodyType.AutoSize = true;
-            lblBodyType.Location = new Point(29, 354);
+            lblBodyType.Location = new Point(19, 272);
+            lblBodyType.Margin = new Padding(4, 0, 4, 0);
             lblBodyType.Name = "lblBodyType";
-            lblBodyType.Size = new Size(81, 20);
+            lblBodyType.Size = new Size(116, 23);
             lblBodyType.TabIndex = 7;
             lblBodyType.Text = "Body Type:";
             // 
@@ -157,9 +166,10 @@
             // 
             lvCustomers.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2, columnHeader3 });
             lvCustomers.FullRowSelect = true;
-            lvCustomers.Location = new Point(464, 19);
+            lvCustomers.Location = new Point(450, 22);
+            lvCustomers.Margin = new Padding(4, 3, 4, 3);
             lvCustomers.Name = "lvCustomers";
-            lvCustomers.Size = new Size(463, 684);
+            lvCustomers.Size = new Size(476, 691);
             lvCustomers.TabIndex = 13;
             lvCustomers.UseCompatibleStateImageBehavior = false;
             lvCustomers.View = View.Details;
@@ -168,6 +178,7 @@
             // columnHeader1
             // 
             columnHeader1.Text = "Index";
+            columnHeader1.Width = 80;
             // 
             // columnHeader2
             // 
@@ -181,16 +192,18 @@
             // 
             // txtBrand
             // 
-            txtBrand.Location = new Point(114, 153);
+            txtBrand.Location = new Point(130, 129);
+            txtBrand.Margin = new Padding(4, 3, 4, 3);
             txtBrand.Name = "txtBrand";
-            txtBrand.Size = new Size(300, 27);
+            txtBrand.Size = new Size(258, 32);
             txtBrand.TabIndex = 12;
             // 
             // txtModel
             // 
-            txtModel.Location = new Point(114, 252);
+            txtModel.Location = new Point(130, 193);
+            txtModel.Margin = new Padding(4, 3, 4, 3);
             txtModel.Name = "txtModel";
-            txtModel.Size = new Size(300, 27);
+            txtModel.Size = new Size(258, 32);
             txtModel.TabIndex = 13;
             // 
             // grbVehicle
@@ -204,38 +217,44 @@
             grbVehicle.Controls.Add(lblModel);
             grbVehicle.Controls.Add(lblBrand);
             grbVehicle.Controls.Add(btnAdd);
-            grbVehicle.Location = new Point(16, 231);
+            grbVehicle.Location = new Point(24, 266);
+            grbVehicle.Margin = new Padding(4, 3, 4, 3);
             grbVehicle.Name = "grbVehicle";
-            grbVehicle.Size = new Size(442, 472);
+            grbVehicle.Padding = new Padding(4, 3, 4, 3);
+            grbVehicle.Size = new Size(409, 447);
             grbVehicle.TabIndex = 15;
             grbVehicle.TabStop = false;
             grbVehicle.Text = "Vehicle Information";
             // 
             // txtPlate
             // 
-            txtPlate.Location = new Point(114, 54);
+            txtPlate.Location = new Point(130, 59);
+            txtPlate.Margin = new Padding(4, 3, 4, 3);
             txtPlate.Name = "txtPlate";
-            txtPlate.Size = new Size(300, 27);
+            txtPlate.Size = new Size(258, 32);
             txtPlate.TabIndex = 15;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(33, 54);
+            label1.Location = new Point(19, 62);
+            label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(49, 20);
+            label1.Size = new Size(72, 23);
             label1.TabIndex = 14;
             label1.Text = "Plate: ";
             // 
             // NewVehicle
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(12F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(939, 725);
             Controls.Add(grbVehicle);
             Controls.Add(grbCustomer);
             Controls.Add(lvCustomers);
+            Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(4, 3, 4, 3);
             Name = "NewVehicle";
             Text = "NewVehicle";
             Load += NewVehicle_Load;

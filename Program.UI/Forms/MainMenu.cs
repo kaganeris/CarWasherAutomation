@@ -16,6 +16,10 @@ namespace Program.UI.Forms
         {
             InitializeComponent();
         }
+        private void MainMenu_Load(object sender, EventArgs e)
+        {
+            DashboardShow();
+        }
         private void btnDashboard_Click(object sender, EventArgs e)
         {
             this.ActiveMdiChild.Close();
@@ -29,12 +33,43 @@ namespace Program.UI.Forms
             dashboard.Show();
         }
 
-        private void btnVehicles_Click(object sender, EventArgs e)
+
+        private void btnWasherStatus_Click(object sender, EventArgs e)
+        {
+            WasherStatusLoad();
+        }
+
+        private void btnAddQueue_Click(object sender, EventArgs e)
+        {
+            this.ActiveMdiChild.Close();
+            AddQueue addQueue = new AddQueue(this);
+            addQueue.MdiParent = this;
+            addQueue.Dock = DockStyle.Fill;
+            addQueue.Show();
+        }
+
+        private void btnCustomers_Click(object sender, EventArgs e)
+        {
+            this.ActiveMdiChild.Close();
+            NewVehicle newVehicle = new NewVehicle();
+            newVehicle.MdiParent = this;
+            newVehicle.Dock = DockStyle.Fill;
+            newVehicle.Show();
+        }
+        public void WasherStatusLoad()
         {
             Vehicles vehicles = new Vehicles();
             vehicles.MdiParent = this;
             vehicles.Dock = DockStyle.Fill;
             vehicles.Show();
+        }
+
+        private void btnEmployees_Click(object sender, EventArgs e)
+        {
+            Employees employees = new Employees();
+            employees.MdiParent = this;
+            employees.Dock = DockStyle.Fill;
+            employees.Show();
         }
     }
 }

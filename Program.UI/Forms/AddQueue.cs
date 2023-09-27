@@ -15,16 +15,18 @@ namespace Program.UI.Forms
 {
     public partial class AddQueue : Form
     {
-        public AddQueue(WashingProcess wp)
+        public AddQueue(MainMenu _anaform)
         {
+            anaform = _anaform;
             InitializeComponent();
         }
+        MainMenu anaform;
         VehicleRepository vehicleRep;
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
+            lvCustomers.Items.Clear();
             int index = 0;
-            if (txtSearch.Text == string.Empty) lvCustomers.Items.Clear();
-            else
+            if (txtSearch.Text != string.Empty && vehicleRep.SearchVehicles(txtSearch.Text).Count>0) 
             {
                 foreach (Vehicle vehicle in vehicleRep.SearchVehicles(txtSearch.Text))
                 {
@@ -45,7 +47,6 @@ namespace Program.UI.Forms
             rbInterior.Checked = true;
 
             SelectedVehicle = (Vehicle)lvCustomers.SelectedItems[0].Tag;
-            wp.Vehicle = SelectedVehicle;
             wp.VehicleID = SelectedVehicle.ID;
             lblBodyType.Text = "Body Type: " + SelectedVehicle.BodyType.ToString();
             lblBrand.Text = "Brand: " + SelectedVehicle.Brand;
@@ -87,12 +88,19 @@ namespace Program.UI.Forms
 
             wp.IsQueue = true;
             wpRep.Add(wp);
-            DialogResult = DialogResult.OK;
+            Vehicles vehicles = new Vehicles();
+            vehicles.MdiParent = anaform;
+            vehicles.Dock = DockStyle.Fill;
+            anaform.ActiveMdiChild.Close();
+            vehicles.Show();
+
         }
         WashingProcess wp;
         private void AddQueue_Load(object sender, EventArgs e)
         {
             wp = new WashingProcess();
+            wp.EmployeeID = 3;
+            vehicleRep = new VehicleRepository();
         }
     }
 }
