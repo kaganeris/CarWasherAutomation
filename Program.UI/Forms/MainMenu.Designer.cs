@@ -266,7 +266,6 @@
             Margin = new Padding(4);
             Name = "MainMenu";
             Text = "MainMenu";
-            Load += MainMenu_Load;
             panel1.ResumeLayout(false);
             panel2.ResumeLayout(false);
             panel5.ResumeLayout(false);
