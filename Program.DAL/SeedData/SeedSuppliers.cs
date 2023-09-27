@@ -15,7 +15,11 @@ namespace Program.DAL.SeedData
         {
             builder.HasData
                 (
-                    new Supplier { ID = 1, CompanyName = "" }
+                    new Supplier { ID = 1, CompanyName = "Breitenberg",ContactName = "Roob",TitleofContact = "Manager" },
+                    new Supplier { ID = 2, CompanyName = "Johnston and Sons", ContactName = "Gutkowski",TitleofContact = "Salesman" },
+                    new Supplier { ID = 3, CompanyName = "Stroman Group", ContactName = "Merlyn",TitleofContact = "Manager" },
+                    new Supplier { ID = 4, CompanyName = "Boehm LLC", ContactName = "Ashley",TitleofContact = "Owner" },
+                    new Supplier { ID = 5, CompanyName = "West and Sons", ContactName = "Tom",TitleofContact = "Manager" }
                 );
         }
     }
