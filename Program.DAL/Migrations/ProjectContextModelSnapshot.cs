@@ -274,9 +274,6 @@ namespace Program.DAL.Migrations
                     b.Property<bool>("IsQueue")
                         .HasColumnType("bit");
 
-                    b.Property<int>("MaterialID")
-                        .HasColumnType("int");
-
                     b.Property<DateTime?>("ModifiedDate")
                         .HasColumnType("datetime2");
 
@@ -286,13 +283,13 @@ namespace Program.DAL.Migrations
                     b.Property<int>("VehicleID")
                         .HasColumnType("int");
 
-                    b.Property<double>("VehiclePollution")
+                    b.Property<double?>("VehiclePollution")
                         .HasColumnType("float");
 
                     b.Property<decimal>("WashingPrice")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<double>("WaterConsumption")
+                    b.Property<double?>("WaterConsumption")
                         .HasColumnType("float");
 
                     b.HasKey("ID");
