@@ -15,7 +15,7 @@ namespace Program.UI.Forms
 {
     public partial class AddQueue : Form
     {
-        public AddQueue(WashingProcess wp)
+        public AddQueue()
         {
             InitializeComponent();
         }
