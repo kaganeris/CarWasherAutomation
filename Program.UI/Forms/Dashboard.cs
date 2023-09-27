@@ -16,5 +16,10 @@ namespace Program.UI.Forms
         {
             InitializeComponent();
         }
+
+        private void Dashboard_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
