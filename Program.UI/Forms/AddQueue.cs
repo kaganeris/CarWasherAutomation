@@ -70,7 +70,6 @@ namespace Program.UI.Forms
                 lblPrice.Text = "Price: " + vehicleRep.GetPrice(SelectedVehicle, "Exterior").ToString();
                 wp.ProcessType = ProcessType.Exterior;
             }
-
         }
 
         private void rbFull_CheckedChanged(object sender, EventArgs e)
