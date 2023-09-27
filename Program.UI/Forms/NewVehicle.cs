@@ -43,7 +43,7 @@ namespace Program.UI.Forms
             if (rbNewCustomer.Checked)
             {
                 lvCustomers.Visible = false;
-                lblSearch.Text = "Customer Name: ";
+                lblSearch.Text = "Name: ";
             }
         }
 
@@ -55,10 +55,12 @@ namespace Program.UI.Forms
                 if (txtSearch.Text == string.Empty) lvCustomers.Items.Clear();
                 else
                 {
+                    vehicleRep = new VehicleRepository();
+                    lvCustomers.Items.Clear();
                     foreach (Vehicle vehicle in vehicleRep.SearchVehicles(txtSearch.Text))
                     {
                         index++;
-                        string[] arr = { index.ToString(), vehicle.Customer.Name };
+                        string[] arr = { index.ToString(), vehicle.Customer.Name, vehicle.Plate};
                         ListViewItem lvi = new ListViewItem(arr);
                         lvCustomers.Items.Add(lvi);
                         lvi.Tag = vehicle;
@@ -87,9 +89,12 @@ namespace Program.UI.Forms
                 if (rbExistingCustomer.Checked && SelectedVehicle != null)
                 {
                     VehicleToAdd.CustomerID = SelectedVehicle.CustomerID;
-                    VehicleToAdd.Customer = SelectedVehicle.Customer;
                     vehicleRep.Add(VehicleToAdd);
                     MessageBox.Show("Adding Vehicle is Successful", "Completed", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    txtBrand.Text = string.Empty;
+                    txtModel.Text = string.Empty;
+                    txtPlate.Text = string.Empty;
+                    txtSearch.Text = string.Empty;
                 }
                 else if (rbNewCustomer.Checked && !string.IsNullOrEmpty(txtSearch.Text))
                 {
@@ -100,6 +105,10 @@ namespace Program.UI.Forms
                     VehicleToAdd.CustomerID = customer.ID;
                     vehicleRep.Add(VehicleToAdd);
                     MessageBox.Show("Adding Vehicle and Customer is Successful", "Completed", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    txtBrand.Text = string.Empty;
+                    txtModel.Text = string.Empty;
+                    txtPlate.Text = string.Empty;
+                    txtSearch.Text = string.Empty;
                 }
                 else
                 {

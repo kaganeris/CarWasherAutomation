@@ -43,6 +43,7 @@
             rbExterior = new RadioButton();
             rbFull = new RadioButton();
             groupBox1 = new GroupBox();
+            lblPlate = new Label();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
@@ -108,7 +109,7 @@
             // lblBrand
             // 
             lblBrand.AutoSize = true;
-            lblBrand.Location = new Point(30, 106);
+            lblBrand.Location = new Point(30, 150);
             lblBrand.Margin = new Padding(4, 0, 4, 0);
             lblBrand.Name = "lblBrand";
             lblBrand.Size = new Size(70, 21);
@@ -118,7 +119,7 @@
             // lblModel
             // 
             lblModel.AutoSize = true;
-            lblModel.Location = new Point(30, 163);
+            lblModel.Location = new Point(30, 207);
             lblModel.Margin = new Padding(4, 0, 4, 0);
             lblModel.Name = "lblModel";
             lblModel.Size = new Size(76, 21);
@@ -128,7 +129,7 @@
             // lblBodyType
             // 
             lblBodyType.AutoSize = true;
-            lblBodyType.Location = new Point(30, 220);
+            lblBodyType.Location = new Point(30, 264);
             lblBodyType.Margin = new Padding(4, 0, 4, 0);
             lblBodyType.Name = "lblBodyType";
             lblBodyType.Size = new Size(108, 21);
@@ -150,7 +151,7 @@
             rbInterior.AutoSize = true;
             rbInterior.Checked = true;
             rbInterior.Enabled = false;
-            rbInterior.Location = new Point(30, 280);
+            rbInterior.Location = new Point(30, 324);
             rbInterior.Margin = new Padding(4, 3, 4, 3);
             rbInterior.Name = "rbInterior";
             rbInterior.Size = new Size(91, 25);
@@ -164,7 +165,7 @@
             // 
             rbExterior.AutoSize = true;
             rbExterior.Enabled = false;
-            rbExterior.Location = new Point(30, 349);
+            rbExterior.Location = new Point(30, 393);
             rbExterior.Margin = new Padding(4, 3, 4, 3);
             rbExterior.Name = "rbExterior";
             rbExterior.Size = new Size(94, 25);
@@ -178,7 +179,7 @@
             // 
             rbFull.AutoSize = true;
             rbFull.Enabled = false;
-            rbFull.Location = new Point(30, 418);
+            rbFull.Location = new Point(30, 462);
             rbFull.Margin = new Padding(4, 3, 4, 3);
             rbFull.Name = "rbFull";
             rbFull.Size = new Size(57, 25);
@@ -190,6 +191,7 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(lblPlate);
             groupBox1.Controls.Add(txtSearch);
             groupBox1.Controls.Add(rbFull);
             groupBox1.Controls.Add(label1);
@@ -207,6 +209,16 @@
             groupBox1.Size = new Size(435, 687);
             groupBox1.TabIndex = 12;
             groupBox1.TabStop = false;
+            // 
+            // lblPlate
+            // 
+            lblPlate.AutoSize = true;
+            lblPlate.Location = new Point(30, 104);
+            lblPlate.Margin = new Padding(4, 0, 4, 0);
+            lblPlate.Name = "lblPlate";
+            lblPlate.Size = new Size(65, 21);
+            lblPlate.TabIndex = 12;
+            lblPlate.Text = "Plate: ";
             // 
             // AddQueue
             // 
@@ -244,5 +256,6 @@
         private RadioButton rbExterior;
         private RadioButton rbFull;
         private GroupBox groupBox1;
+        private Label lblPlate;
     }
 }

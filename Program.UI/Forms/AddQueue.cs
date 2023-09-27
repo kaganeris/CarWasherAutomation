@@ -25,14 +25,15 @@ namespace Program.UI.Forms
         VehicleRepository vehicleRep;
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
+            vehicleRep = new VehicleRepository();
             lvCustomers.Items.Clear();
             int index = 0;
-            if (txtSearch.Text != string.Empty && vehicleRep.SearchVehicles(txtSearch.Text).Count>0) 
+            if (txtSearch.Text != string.Empty && vehicleRep.SearchVehicles(txtSearch.Text).Count > 0)
             {
                 foreach (Vehicle vehicle in vehicleRep.SearchVehicles(txtSearch.Text))
                 {
                     index++;
-                    string[] arr = { index.ToString(), vehicle.Customer.Name };
+                    string[] arr = { index.ToString(), vehicle.Customer.Name, vehicle.Plate };
                     ListViewItem lvi = new ListViewItem(arr);
                     lvCustomers.Items.Add(lvi);
                     lvi.Tag = vehicle;
@@ -51,6 +52,7 @@ namespace Program.UI.Forms
             wp.VehicleID = SelectedVehicle.ID;
             lblBodyType.Text = "Body Type: " + SelectedVehicle.BodyType.ToString();
             lblBrand.Text = "Brand: " + SelectedVehicle.Brand;
+            lblPlate.Text = "Plate: " + SelectedVehicle.Plate;
             lblModel.Text = "Model: " + SelectedVehicle.Model;
             lblPrice.Text = "Price: " + vehicleRep.GetPrice(SelectedVehicle, "Interior").ToString();
         }
@@ -100,7 +102,7 @@ namespace Program.UI.Forms
         private void AddQueue_Load(object sender, EventArgs e)
         {
             wp = new WashingProcess();
-            wp.EmployeeID = 3;
+            wp.EmployeeID = 2;
             vehicleRep = new VehicleRepository();
         }
     }

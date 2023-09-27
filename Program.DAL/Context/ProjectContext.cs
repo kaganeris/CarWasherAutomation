@@ -1,5 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Program.DAL.Mapping;
+using Program.DAL.NewFolder;
+using Program.DAL.SeedData;
 using Program.DATA.Entities;
 using System;
 using System.Collections.Generic;
@@ -23,7 +25,7 @@ namespace Program.DAL.Context
             if (!optionsBuilder.IsConfigured)
             {
                 //optionsBuilder.UseLazyLoadingProxies();
-                optionsBuilder.UseSqlServer(@"Server=DESKTOP-QLKMCAN; Database=CarWasherDB; Uid=sa; Pwd=123;");
+                optionsBuilder.UseSqlServer(@"Server = DESKTOP-9OHK71U; Database = CarWashDB; Trusted_Connection = True;");
             }
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -43,6 +45,7 @@ namespace Program.DAL.Context
             new VehicleMapping().Configure(modelBuilder.Entity<Vehicle>());
 
             new WashingProcessMapping().Configure(modelBuilder.Entity<WashingProcess>());
+
         }
     }
 }

@@ -12,13 +12,8 @@ using Program.DAL.Context;
 namespace Program.DAL.Migrations
 {
     [DbContext(typeof(ProjectContext))]
-<<<<<<<< HEAD:Program.DAL/Migrations/20230927061636_initial.Designer.cs
-    [Migration("20230927061636_initial")]
+    [Migration("20230927184418_initial")]
     partial class initial
-========
-    [Migration("20230927093321_init")]
-    partial class init
->>>>>>>> 80a6ffaf9bee010bd59d4b6677bd1b9c727efaee:Program.DAL/Migrations/20230927093321_init.Designer.cs
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

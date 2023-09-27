@@ -46,7 +46,7 @@ namespace Program.Business.Repositories
         }
         public decimal GetPrice(Vehicle vehicle,string ProcessType)
         {
-            decimal washingPrice =0, basePrice = 100,discount=1;
+            decimal washingPrice =0, basePrice = 100,discount=0;
             switch (vehicle.BodyType)
             {
                 case BodyType.Sedan:
