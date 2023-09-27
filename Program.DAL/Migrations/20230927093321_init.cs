@@ -18,8 +18,8 @@ namespace Program.DAL.Migrations
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     IsSubscriber = table.Column<bool>(type: "bit", nullable: false),
                     SubscribeType = table.Column<int>(type: "int", nullable: false),
-                    SubscribeDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    SubscribeEndingDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    SubscribeDate = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    SubscribeEndingDate = table.Column<DateTime>(type: "datetime2", nullable: true),
                     CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModifiedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
                     DeletedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
@@ -39,7 +39,7 @@ namespace Program.DAL.Migrations
                     FirstName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     LastName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Title = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Address = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Address = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModifiedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
                     DeletedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
@@ -58,7 +58,7 @@ namespace Program.DAL.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     ContactName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     CompanyName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    TitleofContact = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    TitleofContact = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModifiedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
                     DeletedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
@@ -76,9 +76,10 @@ namespace Program.DAL.Migrations
                     ID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     CustomerID = table.Column<int>(type: "int", nullable: false),
-                    Brand = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    ProductionDate = table.Column<int>(type: "int", nullable: false),
-                    Model = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Brand = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ProductionDate = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    Model = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Plate = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     BodyType = table.Column<int>(type: "int", nullable: false),
                     CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModifiedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
@@ -130,12 +131,11 @@ namespace Program.DAL.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     VehicleID = table.Column<int>(type: "int", nullable: false),
                     EmployeeID = table.Column<int>(type: "int", nullable: false),
-                    MaterialID = table.Column<int>(type: "int", nullable: false),
                     IsQueue = table.Column<bool>(type: "bit", nullable: false),
                     WashingPrice = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     Discount = table.Column<double>(type: "float", nullable: false),
-                    VehiclePollution = table.Column<double>(type: "float", nullable: false),
-                    WaterConsumption = table.Column<double>(type: "float", nullable: false),
+                    VehiclePollution = table.Column<double>(type: "float", nullable: true),
+                    WaterConsumption = table.Column<double>(type: "float", nullable: true),
                     ProcessType = table.Column<int>(type: "int", nullable: false),
                     CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModifiedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
@@ -213,8 +213,7 @@ namespace Program.DAL.Migrations
             migrationBuilder.CreateIndex(
                 name: "IX_WashingProcesses_VehicleID",
                 table: "WashingProcesses",
-                column: "VehicleID",
-                unique: true);
+                column: "VehicleID");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

@@ -23,7 +23,7 @@ namespace Program.DAL.Context
             if (!optionsBuilder.IsConfigured)
             {
                 //optionsBuilder.UseLazyLoadingProxies();
-                optionsBuilder.UseSqlServer(@"Server = DESKTOP-9OHK71U; Database = CarWashDB ; Trusted_Connection = True");
+                optionsBuilder.UseSqlServer(@"Server = DESKTOP-R9R9HRG; Database = CarWasherrsDB ; Trusted_Connection = True");
             }
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
