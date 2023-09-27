@@ -41,7 +41,6 @@
             Name = "Dashboard";
             Text = "Dashboard";
             Load += Dashboard_Load;
-            ((System.ComponentModel.ISupportInitialize)chart2).EndInit();
             ResumeLayout(false);
         }
 

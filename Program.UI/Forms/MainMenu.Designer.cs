@@ -116,6 +116,7 @@
             btnEmployees.Text = "        Employees";
             btnEmployees.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnEmployees.UseVisualStyleBackColor = false;
+            btnEmployees.Click += btnEmployees_Click;
             // 
             // btnCustomers
             // 
@@ -286,6 +287,7 @@
             Margin = new Padding(4);
             Name = "MainMenu";
             Text = "MainMenu";
+            Load += MainMenu_Load;
             panel1.ResumeLayout(false);
             panel2.ResumeLayout(false);
             panel5.ResumeLayout(false);
