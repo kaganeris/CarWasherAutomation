@@ -1,5 +1,6 @@
 ﻿using Program.Business.Repositories;
 using Program.DATA.Entities;
+using Program.DATA.Enums;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -44,6 +45,8 @@ namespace Program.UI.Forms
             rbInterior.Checked = true;
 
             SelectedVehicle = (Vehicle)lvCustomers.SelectedItems[0].Tag;
+            wp.Vehicle = SelectedVehicle;
+            wp.VehicleID = SelectedVehicle.ID;
             lblBodyType.Text = "Body Type: " + SelectedVehicle.BodyType.ToString();
             lblBrand.Text = "Brand: " + SelectedVehicle.Brand;
             lblModel.Text = "Model: " + SelectedVehicle.Model;
@@ -52,24 +55,45 @@ namespace Program.UI.Forms
 
         private void rbInterior_CheckedChanged(object sender, EventArgs e)
         {
-            if (rbInterior.Checked) lblPrice.Text = "Price: " + vehicleRep.GetPrice(SelectedVehicle, "Interior").ToString();
+            if (rbInterior.Checked)
+            {
+                lblPrice.Text = "Price: " + vehicleRep.GetPrice(SelectedVehicle, "Interior").ToString();
+                wp.ProcessType = ProcessType.Interior;
+            }
+
         }
 
         private void rbExterior_CheckedChanged(object sender, EventArgs e)
         {
-            if (rbExterior.Checked) lblPrice.Text = "Price: " + vehicleRep.GetPrice(SelectedVehicle, "Exterior").ToString();
+            if (rbExterior.Checked)
+            {
+                lblPrice.Text = "Price: " + vehicleRep.GetPrice(SelectedVehicle, "Exterior").ToString();
+                wp.ProcessType = ProcessType.Exterior;
+            }
 
         }
 
         private void rbFull_CheckedChanged(object sender, EventArgs e)
         {
-            if (rbFull.Checked) lblPrice.Text = "Price: " + vehicleRep.GetPrice(SelectedVehicle, "Full").ToString();
+            if (rbFull.Checked)
+            {
+                lblPrice.Text = "Price: " + vehicleRep.GetPrice(SelectedVehicle, "Full").ToString();
+                wp.ProcessType = ProcessType.Full;
+            }
         }
-
+        WashingProcessRepository wpRep;
         private void btnAddQueue_Click(object sender, EventArgs e)
         {
-            WashingProcess wp;
+            wpRep = new WashingProcessRepository();
+
+            wp.IsQueue = true;
+            wpRep.Add(wp);
             DialogResult = DialogResult.OK;
+        }
+        WashingProcess wp;
+        private void AddQueue_Load(object sender, EventArgs e)
+        {
+            wp = new WashingProcess();
         }
     }
 }

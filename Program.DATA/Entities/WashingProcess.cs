@@ -15,7 +15,6 @@ namespace Program.DATA.Entities
         }
         public int VehicleID { get; set; }
         public int EmployeeID { get; set; }
-        public int MaterialID { get; set; }
         public bool IsQueue { get; set; }
 
         private decimal basePrice = 100;
@@ -93,8 +92,8 @@ namespace Program.DATA.Entities
             }
         }
 
-        public double VehiclePollution { get; set; }
-        public double WaterConsumption { get; set; }
+        public double? VehiclePollution { get; set; }
+        public double? WaterConsumption { get; set; }
         public ProcessType ProcessType { get; set; }
         public List<MaterialWashingProcess> MaterialWashingProcesses { get; set; }
         public Vehicle Vehicle { get; set; }
