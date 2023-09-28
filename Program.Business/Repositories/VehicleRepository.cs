@@ -45,7 +45,7 @@ namespace Program.Business.Repositories
         }
         public decimal GetPrice(Vehicle vehicle,string ProcessType)
         {
-            decimal washingPrice =0, basePrice = 100,discount=0;
+            decimal washingPrice =0, basePrice = 100;
             switch (vehicle.BodyType)
             {
                 case BodyType.Sedan:
@@ -89,16 +89,8 @@ namespace Program.Business.Repositories
                 default:
                     break;
             }
-            if (vehicle.Customer.IsSubscriber == true)
-            {
-                if (vehicle.Customer.SubscribeType == SubscribeType.Basic)
-                    discount = 0.1M;
-                else if (vehicle.Customer.SubscribeType == SubscribeType.Classic)
-                    discount = 0.25M;
-                else if (vehicle.Customer.SubscribeType == SubscribeType.Premium)
-                    discount = 0.4M;
-            }
-            washingPrice = washingPrice * (1 - discount);
+            
+            washingPrice = washingPrice * (1 - GetDiscount(vehicle.Customer));
             return washingPrice;
         }
 
@@ -124,9 +116,9 @@ namespace Program.Business.Repositories
             }
             return 0;
         }
-
         public decimal GetDiscount(Customer customer)
         {
+            
             if (customer.IsSubscriber == true)
             {
                 if (customer.SubscribeType == SubscribeType.Basic)

@@ -31,14 +31,35 @@ namespace Program.Business.Repositories
             db.Customers.Add(customer);
             db.SaveChanges();
         }
-        public void CheckSubscribeType(Customer customer)
+        public void CheckSubscribeType(Customer customer, out string returnMessage)
         {
-            if (VisitTimes(6, customer) > 15) customer.SubscribeType = SubscribeType.Premium;
-            else if (VisitTimes(3, customer) > 7) customer.SubscribeType = SubscribeType.Classic;
-            else if (VisitTimes(1, customer) > 3) customer.SubscribeType = SubscribeType.Basic;
+            returnMessage = "";
+            if (customer.SubscribeEndingDate < DateTime.Now) customer.SubscribeType = SubscribeType.None;
+            if (VisitTimes(6, customer) > 15)
+            {
+                customer.SubscribeType = SubscribeType.Premium;
+                customer.SubscribeEndingDate = DateTime.Now.AddMonths(3);
+                customer.SubscribeDate = DateTime.Now;
+                returnMessage = "Congrats! You have gained Premium Subscription for 3 Months.";
+            }
+            else if (VisitTimes(3, customer) > 7 && customer.SubscribeType != SubscribeType.Premium)
+            {
+                customer.SubscribeType = SubscribeType.Classic;
+                customer.SubscribeEndingDate = DateTime.Now.AddMonths(2);
+                customer.SubscribeDate = DateTime.Now;
+                returnMessage = "Congrats! You have gained Classic Subscription for 2 Months.";
+            }
+            else if (VisitTimes(1, customer) > 3 && customer.SubscribeType != SubscribeType.Premium && customer.SubscribeType != SubscribeType.Classic)
+            {
+                customer.SubscribeType = SubscribeType.Basic;
+                customer.SubscribeEndingDate = DateTime.Now.AddMonths(2);
+                customer.SubscribeDate = DateTime.Now;
+                returnMessage = "Congrats! You have gained Basic Subscription for 1 Month.";
+            }
             else customer.SubscribeType = SubscribeType.None;
             if(customer.SubscribeType == SubscribeType.None) customer.IsSubscriber = false;
             else customer.IsSubscriber = true;
+            Update(customer);
         }
         public int VisitTimes(int month, Customer customer)
         {
