@@ -50,6 +50,7 @@ namespace Program.Business.Repositories
 
             if (result == null) return 0;
             else return result.TotalConsumption;
+        }
         public List<WashingProcess> GetAllQueueVehicles()
         {
             return db.WashingProcesses.Include(x => x.Vehicle.Customer).AsNoTracking().Where(x => x.IsQueue == true).ToList();

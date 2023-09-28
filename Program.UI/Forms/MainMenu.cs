@@ -42,7 +42,7 @@ namespace Program.UI.Forms
         private void btnAddQueue_Click(object sender, EventArgs e)
         {
             this.ActiveMdiChild.Close();
-            AddQueue addQueue = new AddQueue();
+            AddQueue addQueue = new AddQueue(this);
             addQueue.MdiParent = this;
             addQueue.Dock = DockStyle.Fill;
             addQueue.Show();
