@@ -46,6 +46,7 @@ namespace Program.DAL.Context
 
             new WashingProcessMapping().Configure(modelBuilder.Entity<WashingProcess>());
 
+
         }
     }
 }

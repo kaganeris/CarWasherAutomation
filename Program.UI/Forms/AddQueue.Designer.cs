@@ -34,6 +34,7 @@
             columnHeader1 = new ColumnHeader();
             columnHeader2 = new ColumnHeader();
             columnHeader3 = new ColumnHeader();
+            columnHeader4 = new ColumnHeader();
             btnAddQueue = new Button();
             lblBrand = new Label();
             lblModel = new Label();
@@ -45,6 +46,7 @@
             groupBox1 = new GroupBox();
             btnCheckSubs = new Button();
             lblPlate = new Label();
+            lblSubs = new Label();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
@@ -70,12 +72,12 @@
             // 
             // lvCustomers
             // 
-            lvCustomers.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2, columnHeader3 });
+            lvCustomers.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2, columnHeader3, columnHeader4 });
             lvCustomers.FullRowSelect = true;
             lvCustomers.Location = new Point(444, 13);
             lvCustomers.Margin = new Padding(4, 3, 4, 3);
             lvCustomers.Name = "lvCustomers";
-            lvCustomers.Size = new Size(453, 687);
+            lvCustomers.Size = new Size(460, 687);
             lvCustomers.TabIndex = 3;
             lvCustomers.UseCompatibleStateImageBehavior = false;
             lvCustomers.View = View.Details;
@@ -84,17 +86,22 @@
             // columnHeader1
             // 
             columnHeader1.Text = "Index";
-            columnHeader1.Width = 80;
+            columnHeader1.Width = 65;
             // 
             // columnHeader2
             // 
             columnHeader2.Text = "Name";
-            columnHeader2.Width = 200;
+            columnHeader2.Width = 120;
             // 
             // columnHeader3
             // 
             columnHeader3.Text = "Vehicle Plate";
-            columnHeader3.Width = 200;
+            columnHeader3.Width = 140;
+            // 
+            // columnHeader4
+            // 
+            columnHeader4.Text = "Body Type";
+            columnHeader4.Width = 140;
             // 
             // btnAddQueue
             // 
@@ -192,6 +199,7 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(lblSubs);
             groupBox1.Controls.Add(btnCheckSubs);
             groupBox1.Controls.Add(lblPlate);
             groupBox1.Controls.Add(txtSearch);
@@ -232,6 +240,15 @@
             lblPlate.TabIndex = 12;
             lblPlate.Text = "Plate: ";
             // 
+            // lblSubs
+            // 
+            lblSubs.AutoSize = true;
+            lblSubs.Location = new Point(21, 576);
+            lblSubs.Name = "lblSubs";
+            lblSubs.Size = new Size(119, 21);
+            lblSubs.TabIndex = 14;
+            lblSubs.Text = "Subscription:";
+            // 
             // AddQueue
             // 
             AutoScaleDimensions = new SizeF(11F, 21F);
@@ -270,5 +287,7 @@
         private GroupBox groupBox1;
         private Label lblPlate;
         private Button btnCheckSubs;
+        private ColumnHeader columnHeader4;
+        private Label lblSubs;
     }
 }

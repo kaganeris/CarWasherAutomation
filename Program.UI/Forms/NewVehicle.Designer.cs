@@ -47,6 +47,7 @@
             grbVehicle = new GroupBox();
             txtPlate = new TextBox();
             label1 = new Label();
+            columnHeader4 = new ColumnHeader();
             grbCustomer.SuspendLayout();
             grbVehicle.SuspendLayout();
             SuspendLayout();
@@ -164,12 +165,12 @@
             // 
             // lvCustomers
             // 
-            lvCustomers.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2, columnHeader3 });
+            lvCustomers.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2, columnHeader3, columnHeader4 });
             lvCustomers.FullRowSelect = true;
             lvCustomers.Location = new Point(450, 22);
             lvCustomers.Margin = new Padding(4, 3, 4, 3);
             lvCustomers.Name = "lvCustomers";
-            lvCustomers.Size = new Size(476, 691);
+            lvCustomers.Size = new Size(460, 691);
             lvCustomers.TabIndex = 13;
             lvCustomers.UseCompatibleStateImageBehavior = false;
             lvCustomers.View = View.Details;
@@ -178,17 +179,17 @@
             // columnHeader1
             // 
             columnHeader1.Text = "Index";
-            columnHeader1.Width = 80;
+            columnHeader1.Width = 70;
             // 
             // columnHeader2
             // 
             columnHeader2.Text = "Name";
-            columnHeader2.Width = 200;
+            columnHeader2.Width = 120;
             // 
             // columnHeader3
             // 
             columnHeader3.Text = "Vehicle Plate";
-            columnHeader3.Width = 200;
+            columnHeader3.Width = 150;
             // 
             // txtBrand
             // 
@@ -244,6 +245,11 @@
             label1.TabIndex = 14;
             label1.Text = "Plate: ";
             // 
+            // columnHeader4
+            // 
+            columnHeader4.Text = "Body Type";
+            columnHeader4.Width = 120;
+            // 
             // NewVehicle
             // 
             AutoScaleDimensions = new SizeF(12F, 23F);
@@ -286,5 +292,6 @@
         private GroupBox grbVehicle;
         private TextBox txtPlate;
         private Label label1;
+        private ColumnHeader columnHeader4;
     }
 }

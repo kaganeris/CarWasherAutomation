@@ -36,11 +36,11 @@ namespace Program.Business.Repositories
             db.SaveChanges();
         }
 
-        public List<Vehicle> SearchVehicles(string text)
+        public List<Vehicle> GetVehicles()
         {
             return db.Vehicles
                 .Include(x=>x.Customer)
-                .Where(x=> x.Customer.Name.Contains(text) || x.Plate.StartsWith(text))
+                //.Where(x=> x.Customer.Name.Contains(text) || x.Plate.StartsWith(text))
                 .Where(x=>x.IsActive==true)
                 .ToList();
         }
@@ -101,6 +101,13 @@ namespace Program.Business.Repositories
             }
             washingPrice = washingPrice * (1 - discount);
             return washingPrice;
+        }
+
+        public List<Vehicle> SearchVehicles(List<Vehicle> vehicleList, string text)
+        {
+            return vehicleList
+               .Where(x=> x.Customer.Name.ToLower().Contains(text.ToLower()) || x.Plate.StartsWith(text))
+               .ToList();
         }
     }
 }
