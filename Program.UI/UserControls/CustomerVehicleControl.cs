@@ -63,6 +63,7 @@ namespace Program.UI.UserControls
             washerControl.BodyType = this.BodyType;
             washerControl.BodyTypeImage = this.BodyTypeImage;
             washerControl.Tag = this.Tag;
+            washerControl.timer1.Start();
             _vehicles.flpQueue.Controls.Remove(this);
             return washerControl;
         }

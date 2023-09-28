@@ -49,37 +49,37 @@
             grpWasher3.Margin = new Padding(4);
             grpWasher3.Name = "grpWasher3";
             grpWasher3.Padding = new Padding(4);
-            grpWasher3.Size = new Size(310, 178);
+            grpWasher3.Size = new Size(378, 225);
             grpWasher3.TabIndex = 19;
             grpWasher3.TabStop = false;
             grpWasher3.Text = "Washer 3";
             // 
             // flpWasher3
             // 
-            flpWasher3.Location = new Point(7, 36);
+            flpWasher3.Location = new Point(7, 28);
             flpWasher3.Margin = new Padding(4);
             flpWasher3.Name = "flpWasher3";
-            flpWasher3.Size = new Size(295, 134);
+            flpWasher3.Size = new Size(363, 189);
             flpWasher3.TabIndex = 2;
             // 
             // grpWasher2
             // 
             grpWasher2.Controls.Add(flpWasher2);
-            grpWasher2.Location = new Point(68, 279);
+            grpWasher2.Location = new Point(68, 246);
             grpWasher2.Margin = new Padding(4);
             grpWasher2.Name = "grpWasher2";
             grpWasher2.Padding = new Padding(4);
-            grpWasher2.Size = new Size(310, 178);
+            grpWasher2.Size = new Size(378, 225);
             grpWasher2.TabIndex = 18;
             grpWasher2.TabStop = false;
             grpWasher2.Text = "Washer 2";
             // 
             // flpWasher2
             // 
-            flpWasher2.Location = new Point(7, 36);
+            flpWasher2.Location = new Point(7, 28);
             flpWasher2.Margin = new Padding(4);
             flpWasher2.Name = "flpWasher2";
-            flpWasher2.Size = new Size(295, 134);
+            flpWasher2.Size = new Size(363, 189);
             flpWasher2.TabIndex = 2;
             // 
             // grpQueue
@@ -105,21 +105,21 @@
             // grpWasher1
             // 
             grpWasher1.Controls.Add(flpWasher1);
-            grpWasher1.Location = new Point(68, 81);
+            grpWasher1.Location = new Point(68, 13);
             grpWasher1.Margin = new Padding(4);
             grpWasher1.Name = "grpWasher1";
             grpWasher1.Padding = new Padding(4);
-            grpWasher1.Size = new Size(310, 178);
+            grpWasher1.Size = new Size(378, 225);
             grpWasher1.TabIndex = 16;
             grpWasher1.TabStop = false;
             grpWasher1.Text = "Washer 1";
             // 
             // flpWasher1
             // 
-            flpWasher1.Location = new Point(7, 36);
+            flpWasher1.Location = new Point(7, 28);
             flpWasher1.Margin = new Padding(4);
             flpWasher1.Name = "flpWasher1";
-            flpWasher1.Size = new Size(295, 134);
+            flpWasher1.Size = new Size(363, 189);
             flpWasher1.TabIndex = 2;
             // 
             // Vehicles
