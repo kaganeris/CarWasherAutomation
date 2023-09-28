@@ -56,6 +56,7 @@ namespace Program.UI.Forms
             lblModel.Text = "Model: " + SelectedVehicle.Model;
             lblPrice.Text = "Price: " + vehicleRep.GetPrice(SelectedVehicle, "Interior").ToString();
             lblDiscount.Text = "Discount: " +vehicleRep.GetDiscount(SelectedVehicle.Customer).ToString();
+            lblSubs.Text = "Subscription: " + SelectedVehicle.Customer.SubscribeType.ToString();
             btnAddQueue.Enabled = false;
         }
 
@@ -112,6 +113,7 @@ namespace Program.UI.Forms
             wp = new WashingProcess();
             wp.EmployeeID = 1;
             vehicleRep = new VehicleRepository();
+            customerRep = new CustomerRepository();
             VehicleList = vehicleRep.GetVehicles();
             btnAddQueue.Enabled = false;
         }
@@ -120,7 +122,8 @@ namespace Program.UI.Forms
         private void btnCheckSubs_Click(object sender, EventArgs e)
         {
             customerRep = new CustomerRepository();
-            customerRep.CheckSubscribeType(SelectedVehicle.Customer);
+            customerRep.CheckSubscribeType(SelectedVehicle.Customer, out string returnMessage);
+            if(returnMessage!=string.Empty) { }
             lblSubs.Text = "Subscription: " + SelectedVehicle.Customer.SubscribeType.ToString();
             btnAddQueue.Enabled = true;
             lblPrice.Text = "Price: " + vehicleRep.GetPrice(SelectedVehicle, processType).ToString();
