@@ -56,7 +56,7 @@
             // 
             // Dashboard
             // 
-            AutoScaleDimensions = new SizeF(12F, 23F);
+            AutoScaleDimensions = new SizeF(10F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(939, 725);
             Controls.Add(chartWaterCons);

@@ -49,7 +49,7 @@ namespace Program.Business.Repositories
                 .Select(x => new { TotalConsumption = x.Sum(y => y.WaterConsumption) }).FirstOrDefault();
 
             if (result == null) return 0;
-            else return result.TotalConsumption;
+            else return (double)result.TotalConsumption;
         }
         public List<WashingProcess> GetAllQueueVehicles()
         {

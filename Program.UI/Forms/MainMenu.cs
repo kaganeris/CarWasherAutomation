@@ -16,6 +16,30 @@ namespace Program.UI.Forms
         {
             InitializeComponent();
         }
+        #region Design Codes
+        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                if (e.Clicks == 1 && e.Y <= this.Height && e.Y >= 0)
+                {
+                    ReleaseCapture();
+                    SendMessage(this.Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
+                }
+            }
+        }
+        private const int WM_NCLBUTTONDOWN = 0xA1;
+        private const int HT_CAPTION = 0x2;
+
+        [System.Runtime.InteropServices.DllImport("user32.dll")]
+
+        private static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+
+        [System.Runtime.InteropServices.DllImport("user32.dll")]
+
+        private static extern bool ReleaseCapture();
+
+        #endregion
         private void MainMenu_Load(object sender, EventArgs e)
         {
             DashboardShow();
@@ -64,5 +88,22 @@ namespace Program.UI.Forms
             vehicles.Show();
         }
 
+        private void btnEmployees_Click(object sender, EventArgs e)
+        {
+            this.ActiveMdiChild.Close();
+            Employees employees = new Employees();
+            employees.MdiParent = this;
+            employees.Dock = DockStyle.Fill;
+            employees.Show();
+        }
+
+        private void btnMaterialStock_Click(object sender, EventArgs e)
+        {
+            this.ActiveMdiChild.Close();
+            Stock stock = new Stock();
+            stock.MdiParent = this;
+            stock.Dock = DockStyle.Fill;
+            stock.Show();
+        }
     }
 }
