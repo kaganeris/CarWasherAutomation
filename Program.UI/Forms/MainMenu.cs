@@ -73,5 +73,13 @@ namespace Program.UI.Forms
             employees.Dock = DockStyle.Fill;
             employees.Show();
         }
+
+        private void btnMaterialStock_Click(object sender, EventArgs e)
+        {
+            Stock stocks = new Stock();
+            stocks.MdiParent = this;
+            stocks.Dock = DockStyle.Fill;
+            stocks.Show();
+        }
     }
 }
