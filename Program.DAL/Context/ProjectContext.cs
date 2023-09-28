@@ -19,13 +19,14 @@ namespace Program.DAL.Context
         public DbSet<Vehicle> Vehicles { get; set; }
         public DbSet<WashingProcess> WashingProcesses { get; set; }
         public DbSet<Supplier> Suppliers { get; set; }
+        public DbSet<MaterialWashingProcess> MaterialWashingProcesses { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
             {
                 //optionsBuilder.UseLazyLoadingProxies();
-                optionsBuilder.UseSqlServer(@"Server=DESKTOP-QLKMCAN; Database=CarWasherAutomationDB; Uid=sa; Pwd=123;");
+                optionsBuilder.UseSqlServer(@"Server=DESKTOP-QLKMCAN; Database=CarWasherLastDB; Uid=sa; Pwd=123;");
             }
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)

@@ -12,7 +12,7 @@ using Program.DAL.Context;
 namespace Program.DAL.Migrations
 {
     [DbContext(typeof(ProjectContext))]
-    [Migration("20230928080139_init")]
+    [Migration("20230928141156_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -68,7 +68,7 @@ namespace Program.DAL.Migrations
                         new
                         {
                             ID = 1,
-                            CreatedDate = new DateTime(2023, 9, 28, 11, 1, 38, 837, DateTimeKind.Local).AddTicks(442),
+                            CreatedDate = new DateTime(2023, 9, 28, 17, 11, 56, 66, DateTimeKind.Local).AddTicks(3060),
                             IsActive = true,
                             IsSubscriber = false,
                             Name = "Mustafa Tez",
@@ -77,7 +77,7 @@ namespace Program.DAL.Migrations
                         new
                         {
                             ID = 2,
-                            CreatedDate = new DateTime(2023, 9, 28, 11, 1, 38, 837, DateTimeKind.Local).AddTicks(446),
+                            CreatedDate = new DateTime(2023, 9, 28, 17, 11, 56, 66, DateTimeKind.Local).AddTicks(3064),
                             IsActive = true,
                             IsSubscriber = true,
                             Name = "Mert Demirci",
@@ -87,7 +87,7 @@ namespace Program.DAL.Migrations
                         new
                         {
                             ID = 3,
-                            CreatedDate = new DateTime(2023, 9, 28, 11, 1, 38, 837, DateTimeKind.Local).AddTicks(450),
+                            CreatedDate = new DateTime(2023, 9, 28, 17, 11, 56, 66, DateTimeKind.Local).AddTicks(3069),
                             IsActive = true,
                             IsSubscriber = true,
                             Name = "Levent Adnan",
@@ -97,7 +97,7 @@ namespace Program.DAL.Migrations
                         new
                         {
                             ID = 4,
-                            CreatedDate = new DateTime(2023, 9, 28, 11, 1, 38, 837, DateTimeKind.Local).AddTicks(452),
+                            CreatedDate = new DateTime(2023, 9, 28, 17, 11, 56, 66, DateTimeKind.Local).AddTicks(3070),
                             IsActive = true,
                             IsSubscriber = false,
                             Name = "Havva Temel",
@@ -106,7 +106,7 @@ namespace Program.DAL.Migrations
                         new
                         {
                             ID = 5,
-                            CreatedDate = new DateTime(2023, 9, 28, 11, 1, 38, 837, DateTimeKind.Local).AddTicks(453),
+                            CreatedDate = new DateTime(2023, 9, 28, 17, 11, 56, 66, DateTimeKind.Local).AddTicks(3072),
                             IsActive = true,
                             IsSubscriber = true,
                             Name = "İdris Bahadır",
@@ -116,7 +116,7 @@ namespace Program.DAL.Migrations
                         new
                         {
                             ID = 6,
-                            CreatedDate = new DateTime(2023, 9, 28, 11, 1, 38, 837, DateTimeKind.Local).AddTicks(455),
+                            CreatedDate = new DateTime(2023, 9, 28, 17, 11, 56, 66, DateTimeKind.Local).AddTicks(3073),
                             IsActive = true,
                             IsSubscriber = true,
                             Name = "Okan Şahin",
@@ -126,7 +126,7 @@ namespace Program.DAL.Migrations
                         new
                         {
                             ID = 7,
-                            CreatedDate = new DateTime(2023, 9, 28, 11, 1, 38, 837, DateTimeKind.Local).AddTicks(457),
+                            CreatedDate = new DateTime(2023, 9, 28, 17, 11, 56, 66, DateTimeKind.Local).AddTicks(3076),
                             IsActive = true,
                             IsSubscriber = true,
                             Name = "Turgay Mert",
@@ -136,7 +136,7 @@ namespace Program.DAL.Migrations
                         new
                         {
                             ID = 8,
-                            CreatedDate = new DateTime(2023, 9, 28, 11, 1, 38, 837, DateTimeKind.Local).AddTicks(458),
+                            CreatedDate = new DateTime(2023, 9, 28, 17, 11, 56, 66, DateTimeKind.Local).AddTicks(3078),
                             IsActive = true,
                             IsSubscriber = true,
                             Name = "Gözde Emrah",
@@ -146,7 +146,7 @@ namespace Program.DAL.Migrations
                         new
                         {
                             ID = 9,
-                            CreatedDate = new DateTime(2023, 9, 28, 11, 1, 38, 837, DateTimeKind.Local).AddTicks(460),
+                            CreatedDate = new DateTime(2023, 9, 28, 17, 11, 56, 66, DateTimeKind.Local).AddTicks(3080),
                             IsActive = true,
                             IsSubscriber = false,
                             Name = "Rıdvan Demir",
@@ -198,7 +198,7 @@ namespace Program.DAL.Migrations
                         {
                             ID = 1,
                             Address = "Unknown",
-                            CreatedDate = new DateTime(2023, 9, 28, 11, 1, 38, 837, DateTimeKind.Local).AddTicks(596),
+                            CreatedDate = new DateTime(2023, 9, 28, 17, 11, 56, 66, DateTimeKind.Local).AddTicks(3247),
                             FirstName = "Unknown",
                             IsActive = true,
                             LastName = "Unknown",
@@ -208,7 +208,7 @@ namespace Program.DAL.Migrations
                         {
                             ID = 2,
                             Address = "Aydın/Türkiye",
-                            CreatedDate = new DateTime(2023, 9, 28, 11, 1, 38, 837, DateTimeKind.Local).AddTicks(598),
+                            CreatedDate = new DateTime(2023, 9, 28, 17, 11, 56, 66, DateTimeKind.Local).AddTicks(3249),
                             FirstName = "Kağan",
                             IsActive = true,
                             LastName = "Eriş",
@@ -218,7 +218,7 @@ namespace Program.DAL.Migrations
                         {
                             ID = 3,
                             Address = "Bursa/Türkiye",
-                            CreatedDate = new DateTime(2023, 9, 28, 11, 1, 38, 837, DateTimeKind.Local).AddTicks(644),
+                            CreatedDate = new DateTime(2023, 9, 28, 17, 11, 56, 66, DateTimeKind.Local).AddTicks(3250),
                             FirstName = "Mehmet Mücahid",
                             IsActive = true,
                             LastName = "Bilge",
@@ -228,7 +228,7 @@ namespace Program.DAL.Migrations
                         {
                             ID = 4,
                             Address = "Ankara/Türkiye",
-                            CreatedDate = new DateTime(2023, 9, 28, 11, 1, 38, 837, DateTimeKind.Local).AddTicks(645),
+                            CreatedDate = new DateTime(2023, 9, 28, 17, 11, 56, 66, DateTimeKind.Local).AddTicks(3251),
                             FirstName = "Ali Furkan",
                             IsActive = true,
                             LastName = "Terzi",
@@ -238,7 +238,7 @@ namespace Program.DAL.Migrations
                         {
                             ID = 5,
                             Address = "İzmir/Türkiye",
-                            CreatedDate = new DateTime(2023, 9, 28, 11, 1, 38, 837, DateTimeKind.Local).AddTicks(646),
+                            CreatedDate = new DateTime(2023, 9, 28, 17, 11, 56, 66, DateTimeKind.Local).AddTicks(3252),
                             FirstName = "İsmail",
                             IsActive = true,
                             LastName = "Tosun",
@@ -248,7 +248,7 @@ namespace Program.DAL.Migrations
                         {
                             ID = 6,
                             Address = "İstanbul/Türkiye",
-                            CreatedDate = new DateTime(2023, 9, 28, 11, 1, 38, 837, DateTimeKind.Local).AddTicks(647),
+                            CreatedDate = new DateTime(2023, 9, 28, 17, 11, 56, 66, DateTimeKind.Local).AddTicks(3253),
                             FirstName = "Hakan",
                             IsActive = true,
                             LastName = "Varyemez",
@@ -258,7 +258,7 @@ namespace Program.DAL.Migrations
                         {
                             ID = 7,
                             Address = "Mersin/Türkiye",
-                            CreatedDate = new DateTime(2023, 9, 28, 11, 1, 38, 837, DateTimeKind.Local).AddTicks(648),
+                            CreatedDate = new DateTime(2023, 9, 28, 17, 11, 56, 66, DateTimeKind.Local).AddTicks(3253),
                             FirstName = "Metin",
                             IsActive = true,
                             LastName = "Tekin",
@@ -309,7 +309,7 @@ namespace Program.DAL.Migrations
                         new
                         {
                             ID = 1,
-                            CreatedDate = new DateTime(2023, 9, 28, 11, 1, 38, 837, DateTimeKind.Local).AddTicks(664),
+                            CreatedDate = new DateTime(2023, 9, 28, 17, 11, 56, 66, DateTimeKind.Local).AddTicks(3319),
                             IsActive = true,
                             MaterialName = "Car wash brush",
                             MaterialPrice = 50m,
@@ -319,7 +319,7 @@ namespace Program.DAL.Migrations
                         new
                         {
                             ID = 2,
-                            CreatedDate = new DateTime(2023, 9, 28, 11, 1, 38, 837, DateTimeKind.Local).AddTicks(668),
+                            CreatedDate = new DateTime(2023, 9, 28, 17, 11, 56, 66, DateTimeKind.Local).AddTicks(3322),
                             IsActive = true,
                             MaterialName = "High-pressure washer",
                             MaterialPrice = 250m,
@@ -329,7 +329,7 @@ namespace Program.DAL.Migrations
                         new
                         {
                             ID = 3,
-                            CreatedDate = new DateTime(2023, 9, 28, 11, 1, 38, 837, DateTimeKind.Local).AddTicks(669),
+                            CreatedDate = new DateTime(2023, 9, 28, 17, 11, 56, 66, DateTimeKind.Local).AddTicks(3323),
                             IsActive = true,
                             MaterialName = "Foam cannon",
                             MaterialPrice = 35m,
@@ -339,7 +339,7 @@ namespace Program.DAL.Migrations
                         new
                         {
                             ID = 4,
-                            CreatedDate = new DateTime(2023, 9, 28, 11, 1, 38, 837, DateTimeKind.Local).AddTicks(670),
+                            CreatedDate = new DateTime(2023, 9, 28, 17, 11, 56, 66, DateTimeKind.Local).AddTicks(3324),
                             IsActive = true,
                             MaterialName = "Buckets",
                             MaterialPrice = 21m,
@@ -349,7 +349,7 @@ namespace Program.DAL.Migrations
                         new
                         {
                             ID = 5,
-                            CreatedDate = new DateTime(2023, 9, 28, 11, 1, 38, 837, DateTimeKind.Local).AddTicks(671),
+                            CreatedDate = new DateTime(2023, 9, 28, 17, 11, 56, 66, DateTimeKind.Local).AddTicks(3326),
                             IsActive = true,
                             MaterialName = "Water hoses",
                             MaterialPrice = 8m,
@@ -359,7 +359,7 @@ namespace Program.DAL.Migrations
                         new
                         {
                             ID = 6,
-                            CreatedDate = new DateTime(2023, 9, 28, 11, 1, 38, 837, DateTimeKind.Local).AddTicks(672),
+                            CreatedDate = new DateTime(2023, 9, 28, 17, 11, 56, 66, DateTimeKind.Local).AddTicks(3327),
                             IsActive = true,
                             MaterialName = "Upholstery cleaners",
                             MaterialPrice = 15m,
@@ -369,7 +369,7 @@ namespace Program.DAL.Migrations
                         new
                         {
                             ID = 7,
-                            CreatedDate = new DateTime(2023, 9, 28, 11, 1, 38, 837, DateTimeKind.Local).AddTicks(673),
+                            CreatedDate = new DateTime(2023, 9, 28, 17, 11, 56, 66, DateTimeKind.Local).AddTicks(3328),
                             IsActive = true,
                             MaterialName = "Wheel and tire brushes",
                             MaterialPrice = 15m,
@@ -379,7 +379,7 @@ namespace Program.DAL.Migrations
                         new
                         {
                             ID = 8,
-                            CreatedDate = new DateTime(2023, 9, 28, 11, 1, 38, 837, DateTimeKind.Local).AddTicks(674),
+                            CreatedDate = new DateTime(2023, 9, 28, 17, 11, 56, 66, DateTimeKind.Local).AddTicks(3329),
                             IsActive = true,
                             MaterialName = "Vacuum cleaners",
                             MaterialPrice = 5m,
@@ -389,7 +389,7 @@ namespace Program.DAL.Migrations
                         new
                         {
                             ID = 9,
-                            CreatedDate = new DateTime(2023, 9, 28, 11, 1, 38, 837, DateTimeKind.Local).AddTicks(675),
+                            CreatedDate = new DateTime(2023, 9, 28, 17, 11, 56, 66, DateTimeKind.Local).AddTicks(3330),
                             IsActive = true,
                             MaterialName = "Glass cleaner",
                             MaterialPrice = 6m,
@@ -399,7 +399,7 @@ namespace Program.DAL.Migrations
                         new
                         {
                             ID = 10,
-                            CreatedDate = new DateTime(2023, 9, 28, 11, 1, 38, 837, DateTimeKind.Local).AddTicks(676),
+                            CreatedDate = new DateTime(2023, 9, 28, 17, 11, 56, 66, DateTimeKind.Local).AddTicks(3331),
                             IsActive = true,
                             MaterialName = "Cleaning towels",
                             MaterialPrice = 3m,
@@ -428,7 +428,7 @@ namespace Program.DAL.Migrations
 
                     b.HasIndex("WashingProcessID");
 
-                    b.ToTable("MaterialWashingProcess");
+                    b.ToTable("MaterialWashingProcesses");
                 });
 
             modelBuilder.Entity("Program.DATA.Entities.Supplier", b =>
@@ -472,7 +472,7 @@ namespace Program.DAL.Migrations
                             ID = 1,
                             CompanyName = "Breitenberg",
                             ContactName = "Roob",
-                            CreatedDate = new DateTime(2023, 9, 28, 11, 1, 38, 837, DateTimeKind.Local).AddTicks(690),
+                            CreatedDate = new DateTime(2023, 9, 28, 17, 11, 56, 66, DateTimeKind.Local).AddTicks(3345),
                             IsActive = true,
                             TitleofContact = "Manager"
                         },
@@ -481,7 +481,7 @@ namespace Program.DAL.Migrations
                             ID = 2,
                             CompanyName = "Johnston and Sons",
                             ContactName = "Gutkowski",
-                            CreatedDate = new DateTime(2023, 9, 28, 11, 1, 38, 837, DateTimeKind.Local).AddTicks(693),
+                            CreatedDate = new DateTime(2023, 9, 28, 17, 11, 56, 66, DateTimeKind.Local).AddTicks(3347),
                             IsActive = true,
                             TitleofContact = "Salesman"
                         },
@@ -490,7 +490,7 @@ namespace Program.DAL.Migrations
                             ID = 3,
                             CompanyName = "Stroman Group",
                             ContactName = "Merlyn",
-                            CreatedDate = new DateTime(2023, 9, 28, 11, 1, 38, 837, DateTimeKind.Local).AddTicks(694),
+                            CreatedDate = new DateTime(2023, 9, 28, 17, 11, 56, 66, DateTimeKind.Local).AddTicks(3348),
                             IsActive = true,
                             TitleofContact = "Manager"
                         },
@@ -499,7 +499,7 @@ namespace Program.DAL.Migrations
                             ID = 4,
                             CompanyName = "Boehm LLC",
                             ContactName = "Ashley",
-                            CreatedDate = new DateTime(2023, 9, 28, 11, 1, 38, 837, DateTimeKind.Local).AddTicks(695),
+                            CreatedDate = new DateTime(2023, 9, 28, 17, 11, 56, 66, DateTimeKind.Local).AddTicks(3349),
                             IsActive = true,
                             TitleofContact = "Owner"
                         },
@@ -508,7 +508,7 @@ namespace Program.DAL.Migrations
                             ID = 5,
                             CompanyName = "West and Sons",
                             ContactName = "Tom",
-                            CreatedDate = new DateTime(2023, 9, 28, 11, 1, 38, 837, DateTimeKind.Local).AddTicks(698),
+                            CreatedDate = new DateTime(2023, 9, 28, 17, 11, 56, 66, DateTimeKind.Local).AddTicks(3350),
                             IsActive = true,
                             TitleofContact = "Manager"
                         });
@@ -565,7 +565,7 @@ namespace Program.DAL.Migrations
                             ID = 1,
                             BodyType = 1,
                             Brand = "Volkswagen",
-                            CreatedDate = new DateTime(2023, 9, 28, 11, 1, 38, 837, DateTimeKind.Local).AddTicks(567),
+                            CreatedDate = new DateTime(2023, 9, 28, 17, 11, 56, 66, DateTimeKind.Local).AddTicks(3215),
                             CustomerID = 1,
                             IsActive = true,
                             Model = "Golf",
@@ -577,7 +577,7 @@ namespace Program.DAL.Migrations
                             ID = 2,
                             BodyType = 2,
                             Brand = "Peugeot",
-                            CreatedDate = new DateTime(2023, 9, 28, 11, 1, 38, 837, DateTimeKind.Local).AddTicks(570),
+                            CreatedDate = new DateTime(2023, 9, 28, 17, 11, 56, 66, DateTimeKind.Local).AddTicks(3219),
                             CustomerID = 1,
                             IsActive = true,
                             Model = "3008",
@@ -589,7 +589,7 @@ namespace Program.DAL.Migrations
                             ID = 3,
                             BodyType = 2,
                             Brand = "Fiat",
-                            CreatedDate = new DateTime(2023, 9, 28, 11, 1, 38, 837, DateTimeKind.Local).AddTicks(572),
+                            CreatedDate = new DateTime(2023, 9, 28, 17, 11, 56, 66, DateTimeKind.Local).AddTicks(3221),
                             CustomerID = 2,
                             IsActive = true,
                             Model = "Egea Cross",
@@ -601,7 +601,7 @@ namespace Program.DAL.Migrations
                             ID = 4,
                             BodyType = 1,
                             Brand = "Opel",
-                            CreatedDate = new DateTime(2023, 9, 28, 11, 1, 38, 837, DateTimeKind.Local).AddTicks(573),
+                            CreatedDate = new DateTime(2023, 9, 28, 17, 11, 56, 66, DateTimeKind.Local).AddTicks(3222),
                             CustomerID = 3,
                             IsActive = true,
                             Model = "Corsa",
@@ -613,7 +613,7 @@ namespace Program.DAL.Migrations
                             ID = 5,
                             BodyType = 0,
                             Brand = "Toyota",
-                            CreatedDate = new DateTime(2023, 9, 28, 11, 1, 38, 837, DateTimeKind.Local).AddTicks(575),
+                            CreatedDate = new DateTime(2023, 9, 28, 17, 11, 56, 66, DateTimeKind.Local).AddTicks(3223),
                             CustomerID = 4,
                             IsActive = true,
                             Model = "Corolla",
@@ -625,7 +625,7 @@ namespace Program.DAL.Migrations
                             ID = 6,
                             BodyType = 3,
                             Brand = "Volvo",
-                            CreatedDate = new DateTime(2023, 9, 28, 11, 1, 38, 837, DateTimeKind.Local).AddTicks(576),
+                            CreatedDate = new DateTime(2023, 9, 28, 17, 11, 56, 66, DateTimeKind.Local).AddTicks(3225),
                             CustomerID = 5,
                             IsActive = true,
                             Model = "V90 Cross",
@@ -637,7 +637,7 @@ namespace Program.DAL.Migrations
                             ID = 7,
                             BodyType = 4,
                             Brand = "Toyota",
-                            CreatedDate = new DateTime(2023, 9, 28, 11, 1, 38, 837, DateTimeKind.Local).AddTicks(577),
+                            CreatedDate = new DateTime(2023, 9, 28, 17, 11, 56, 66, DateTimeKind.Local).AddTicks(3226),
                             CustomerID = 6,
                             IsActive = true,
                             Model = "Hilux",
@@ -649,7 +649,7 @@ namespace Program.DAL.Migrations
                             ID = 8,
                             BodyType = 5,
                             Brand = "Ford",
-                            CreatedDate = new DateTime(2023, 9, 28, 11, 1, 38, 837, DateTimeKind.Local).AddTicks(579),
+                            CreatedDate = new DateTime(2023, 9, 28, 17, 11, 56, 66, DateTimeKind.Local).AddTicks(3227),
                             CustomerID = 7,
                             IsActive = true,
                             Model = "Tourneo",
@@ -661,7 +661,7 @@ namespace Program.DAL.Migrations
                             ID = 9,
                             BodyType = 6,
                             Brand = "Citroen",
-                            CreatedDate = new DateTime(2023, 9, 28, 11, 1, 38, 837, DateTimeKind.Local).AddTicks(580),
+                            CreatedDate = new DateTime(2023, 9, 28, 17, 11, 56, 66, DateTimeKind.Local).AddTicks(3229),
                             CustomerID = 8,
                             IsActive = true,
                             Model = "Jumper",
@@ -673,7 +673,7 @@ namespace Program.DAL.Migrations
                             ID = 10,
                             BodyType = 7,
                             Brand = "BMW",
-                            CreatedDate = new DateTime(2023, 9, 28, 11, 1, 38, 837, DateTimeKind.Local).AddTicks(582),
+                            CreatedDate = new DateTime(2023, 9, 28, 17, 11, 56, 66, DateTimeKind.Local).AddTicks(3230),
                             CustomerID = 9,
                             IsActive = true,
                             Model = "420D M Sport",
@@ -696,8 +696,8 @@ namespace Program.DAL.Migrations
                     b.Property<DateTime?>("DeletedDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<double>("Discount")
-                        .HasColumnType("float");
+                    b.Property<decimal>("Discount")
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<int>("EmployeeID")
                         .HasColumnType("int");
@@ -723,7 +723,7 @@ namespace Program.DAL.Migrations
                     b.Property<decimal>("WashingPrice")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<double?>("WaterConsumption")
+                    b.Property<double>("WaterConsumption")
                         .HasColumnType("float");
 
                     b.HasKey("ID");
