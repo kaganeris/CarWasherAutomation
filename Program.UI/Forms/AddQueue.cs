@@ -110,7 +110,7 @@ namespace Program.UI.Forms
         private void AddQueue_Load(object sender, EventArgs e)
         {
             wp = new WashingProcess();
-            wp.EmployeeID = 2;
+            wp.EmployeeID = 1;
             vehicleRep = new VehicleRepository();
             VehicleList = vehicleRep.GetVehicles();
             btnAddQueue.Enabled = false;

@@ -13,6 +13,7 @@ namespace Program.DAL.Context
 {
     public class ProjectContext : DbContext
     {
+        public DbSet<MaterialWashingProcess> MaterialWashingProcesses { get; set; }
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Employee> Employees { get; set; }
         public DbSet<Material> Materials { get; set; }
