@@ -44,9 +44,10 @@
             rbExterior = new RadioButton();
             rbFull = new RadioButton();
             groupBox1 = new GroupBox();
+            lblDiscount = new Label();
+            lblSubs = new Label();
             btnCheckSubs = new Button();
             lblPlate = new Label();
-            lblSubs = new Label();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
@@ -105,7 +106,7 @@
             // 
             // btnAddQueue
             // 
-            btnAddQueue.Location = new Point(135, 612);
+            btnAddQueue.Location = new Point(261, 634);
             btnAddQueue.Margin = new Padding(4, 3, 4, 3);
             btnAddQueue.Name = "btnAddQueue";
             btnAddQueue.Size = new Size(166, 37);
@@ -147,7 +148,7 @@
             // lblPrice
             // 
             lblPrice.AutoSize = true;
-            lblPrice.Location = new Point(183, 516);
+            lblPrice.Location = new Point(247, 576);
             lblPrice.Margin = new Padding(4, 0, 4, 0);
             lblPrice.Name = "lblPrice";
             lblPrice.Size = new Size(63, 21);
@@ -199,6 +200,7 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(lblDiscount);
             groupBox1.Controls.Add(lblSubs);
             groupBox1.Controls.Add(btnCheckSubs);
             groupBox1.Controls.Add(lblPlate);
@@ -216,9 +218,28 @@
             groupBox1.Margin = new Padding(4, 3, 4, 3);
             groupBox1.Name = "groupBox1";
             groupBox1.Padding = new Padding(4, 3, 4, 3);
-            groupBox1.Size = new Size(435, 687);
+            groupBox1.Size = new Size(435, 713);
             groupBox1.TabIndex = 12;
             groupBox1.TabStop = false;
+            // 
+            // lblDiscount
+            // 
+            lblDiscount.AutoSize = true;
+            lblDiscount.Location = new Point(247, 516);
+            lblDiscount.Margin = new Padding(4, 0, 4, 0);
+            lblDiscount.Name = "lblDiscount";
+            lblDiscount.Size = new Size(96, 21);
+            lblDiscount.TabIndex = 15;
+            lblDiscount.Text = "Discount: ";
+            // 
+            // lblSubs
+            // 
+            lblSubs.AutoSize = true;
+            lblSubs.Location = new Point(21, 576);
+            lblSubs.Name = "lblSubs";
+            lblSubs.Size = new Size(119, 21);
+            lblSubs.TabIndex = 14;
+            lblSubs.Text = "Subscription:";
             // 
             // btnCheckSubs
             // 
@@ -239,15 +260,6 @@
             lblPlate.Size = new Size(65, 21);
             lblPlate.TabIndex = 12;
             lblPlate.Text = "Plate: ";
-            // 
-            // lblSubs
-            // 
-            lblSubs.AutoSize = true;
-            lblSubs.Location = new Point(21, 576);
-            lblSubs.Name = "lblSubs";
-            lblSubs.Size = new Size(119, 21);
-            lblSubs.TabIndex = 14;
-            lblSubs.Text = "Subscription:";
             // 
             // AddQueue
             // 
@@ -289,5 +301,6 @@
         private Button btnCheckSubs;
         private ColumnHeader columnHeader4;
         private Label lblSubs;
+        private Label lblDiscount;
     }
 }

@@ -94,6 +94,9 @@ namespace Program.UI.Forms
             wpRep = new WashingProcessRepository();
 
             wp.IsQueue = true;
+            wp.WashingPrice = vehicleRep.GetPrice(SelectedVehicle, processType);
+            wp.WaterConsumption = vehicleRep.GetWaterConsumption(wp);
+            wp.Discount = vehicleRep.GetDiscount(SelectedVehicle.Customer);
             wpRep.Add(wp);
             Vehicles vehicles = new Vehicles();
             vehicles.MdiParent = anaform;
@@ -119,7 +122,7 @@ namespace Program.UI.Forms
             customerRep.CheckSubscribeType(SelectedVehicle.Customer);
             lblSubs.Text = "Subscription: " + SelectedVehicle.Customer.SubscribeType.ToString();
             btnAddQueue.Enabled = true;
-            lblPrice.Text = "Price: " + vehicleRep.GetPrice(SelectedVehicle,processType ).ToString();
+            lblPrice.Text = "Price: " + vehicleRep.GetPrice(SelectedVehicle, processType).ToString();
         }
     }
 }

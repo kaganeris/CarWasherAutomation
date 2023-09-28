@@ -37,6 +37,8 @@ namespace Program.Business.Repositories
             else if (VisitTimes(3, customer) > 7) customer.SubscribeType = SubscribeType.Classic;
             else if (VisitTimes(1, customer) > 3) customer.SubscribeType = SubscribeType.Basic;
             else customer.SubscribeType = SubscribeType.None;
+            if(customer.SubscribeType == SubscribeType.None) customer.IsSubscriber = false;
+            else customer.IsSubscriber = true;
         }
         public int VisitTimes(int month, Customer customer)
         {
