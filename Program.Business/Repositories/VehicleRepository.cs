@@ -36,11 +36,11 @@ namespace Program.Business.Repositories
             db.SaveChanges();
         }
 
-        public List<Vehicle> SearchVehicles(string text)
+        public List<Vehicle> GetVehicles()
         {
             return db.Vehicles
                 .Include(x=>x.Customer)
-                .Where(x=> x.Customer.Name.Contains(text) || x.Plate.StartsWith(text))
+                //.Where(x=> x.Customer.Name.Contains(text) || x.Plate.StartsWith(text))
                 .Where(x=>x.IsActive==true)
                 .ToList();
         }
@@ -101,6 +101,43 @@ namespace Program.Business.Repositories
             }
             washingPrice = washingPrice * (1 - discount);
             return washingPrice;
+        }
+
+        public List<Vehicle> SearchVehicles(List<Vehicle> vehicleList, string text)
+        {
+            return vehicleList
+               .Where(x=> x.Customer.Name.ToLower().Contains(text.ToLower()) || x.Plate.StartsWith(text))
+               .ToList();
+        }
+
+        public int GetWaterConsumption(WashingProcess wp)
+        {
+            Vehicle vehicle = db.Vehicles.Where(x=>x.ID==(wp.VehicleID)).FirstOrDefault();
+            if (wp.ProcessType == ProcessType.Interior) return 0;
+            else
+            {
+                if (vehicle.BodyType == BodyType.Coupe) return 35;
+                else if (vehicle.BodyType == BodyType.Hatchback) return 45;
+                else if (vehicle.BodyType == BodyType.Sedan) return 60;
+                else if (vehicle.BodyType == BodyType.Minivan) return 75;
+                else if (vehicle.BodyType == BodyType.Panelvan) return 85;
+                else if (vehicle.BodyType == BodyType.StationVagon) return 65;
+            }
+            return 0;
+        }
+
+        public decimal GetDiscount(Customer customer)
+        {
+            if (customer.IsSubscriber == true)
+            {
+                if (customer.SubscribeType == SubscribeType.Basic)
+                    return 0.1M;
+                else if (customer.SubscribeType == SubscribeType.Classic)
+                    return 0.25M;
+                else if (customer.SubscribeType == SubscribeType.Premium)
+                    return 0.4M;
+            }
+            return 0;
         }
     }
 }

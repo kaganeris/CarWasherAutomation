@@ -42,9 +42,7 @@ namespace Program.UI.Forms
         private void btnAddQueue_Click(object sender, EventArgs e)
         {
             this.ActiveMdiChild.Close();
-
-            AddQueue addQueue = new AddQueue(this);
-
+            AddQueue addQueue = new AddQueue();
             addQueue.MdiParent = this;
             addQueue.Dock = DockStyle.Fill;
             addQueue.Show();
@@ -66,20 +64,5 @@ namespace Program.UI.Forms
             vehicles.Show();
         }
 
-        private void btnEmployees_Click(object sender, EventArgs e)
-        {
-            Employees employees = new Employees();
-            employees.MdiParent = this;
-            employees.Dock = DockStyle.Fill;
-            employees.Show();
-        }
-
-        private void btnMaterialStock_Click(object sender, EventArgs e)
-        {
-            Stock stocks = new Stock();
-            stocks.MdiParent = this;
-            stocks.Dock = DockStyle.Fill;
-            stocks.Show();
-        }
     }
 }
