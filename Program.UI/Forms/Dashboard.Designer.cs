@@ -39,7 +39,7 @@
             // 
             chartArea1.Name = "ChartArea1";
             chartWaterCons.ChartAreas.Add(chartArea1);
-            chartWaterCons.Location = new Point(158, 118);
+            chartWaterCons.Location = new Point(455, 412);
             chartWaterCons.Name = "chartWaterCons";
             chartWaterCons.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.EarthTones;
             series1.ChartArea = "ChartArea1";
@@ -47,7 +47,7 @@
             series1.LabelBorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dash;
             series1.Name = "Water Consumption";
             chartWaterCons.Series.Add(series1);
-            chartWaterCons.Size = new Size(527, 444);
+            chartWaterCons.Size = new Size(472, 301);
             chartWaterCons.TabIndex = 0;
             chartWaterCons.Text = "chart3";
             title1.Name = "Water Consumption";
