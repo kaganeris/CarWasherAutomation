@@ -1,4 +1,5 @@
-﻿using Program.DAL.Context;
+﻿using Program.Business.Repositories;
+using Program.DAL.Context;
 using Program.DATA.Entities;
 using System;
 using System.Collections.Generic;
@@ -6,6 +7,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -21,6 +23,9 @@ namespace Program.UI.Forms
             ShowCurrentStocks();
             cmbSuppliers.DisplayMember = "CompanyName";
             cmbSuppliers.DataSource = GetSuppliers();
+            MessageBox.Show("Maximum capacity for one product is 100, Warehouse capacity is maximum 10000 items!");
+            txtStockToUpdate.Enabled = false;
+            btnUpdateStock.Enabled = false;
         }
 
         private List<Supplier> GetSuppliers()
@@ -39,11 +44,17 @@ namespace Program.UI.Forms
 
             if (!decimal.TryParse(txtPrice.Text, out materialPrice) || !int.TryParse(txtStockToAdd.Text, out stock))
             {
-                MessageBox.Show("Lütfen geçerli bir fiyat ve stok miktarı girin.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please enter a valid price and stock quantity.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (stock>100)
+            {
+                MessageBox.Show("Maximum capacity for one product is 100!");
                 return;
             }
 
             AddMaterialWithSelectedSupplier(materialName, materialPrice, stock);
+            ShowCurrentStocks();
         }
         private void AddMaterialWithSelectedSupplier(string materialName, decimal materialPrice, int stock)
         {
@@ -53,6 +64,16 @@ namespace Program.UI.Forms
             {
                 using (var dbContext = new ProjectContext())
                 {
+                    var existingProduct = dbContext.Materials
+                        .FirstOrDefault(p => p.MaterialName == materialName);
+
+                    if (existingProduct != null)
+                    {
+                        MessageBox.Show("A product with the same name already exists. Please choose a different name.",
+                            "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+
                     dbContext.Materials.Add(new Material
                     {
                         MaterialName = materialName,
@@ -66,16 +87,16 @@ namespace Program.UI.Forms
                     dbContext.SaveChanges();
                 }
 
-                MessageBox.Show("Malzeme başarıyla eklendi.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("The material has been added successfully.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                MessageBox.Show("Lütfen bir tedarikçi seçin.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please select a supplier.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
-            ShowNewProductStock();
+            ShowSelectedProductStock();
         }
-    
+
         private void btnUpdateStock_Click(object sender, EventArgs e)
 
         {
@@ -91,16 +112,16 @@ namespace Program.UI.Forms
                     UpdateProductStock(selectedProductName, newStock);
                     ShowCurrentStocks();
                     ShowUpdatedProductStock(selectedProductName);
-                    lblInfo.Text = $"\"{selectedProductName}\" adlı ürünün stok bilgisi güncellendi.";
+                    lblInfo.Text = $"Stock information of the \"{selectedProductName}\" has been updated.";
                 }
                 else
                 {
-                    MessageBox.Show("Geçerli bir stok miktarı girin.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Please enter a valid price and stock quantity.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             else
             {
-                MessageBox.Show("Lütfen güncellenecek bir ürün seçin.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Please select a product to update.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -126,16 +147,16 @@ namespace Program.UI.Forms
             int totalStock = products.Sum(p => p.Stock);
             bool isCritical = totalStock < CriticalStockThreshold;
 
-            progressBarCurrentStock.Maximum = 100;
+            progressBarCurrentStock.Maximum = 10000;
             progressBarCurrentStock.Value = isCritical ? CriticalStockThreshold : totalStock;
             progressBarCurrentStock.ForeColor = isCritical ? System.Drawing.Color.Red : System.Drawing.Color.Green;
 
-            lblCurrentStock.Text = $"Toplam Stok: {totalStock}";
+            lblCurrentStock.Text = $"Total Stock: {totalStock}";
 
             lblCriticalWarning.Visible = isCritical;
         }
 
-        private void ShowNewProductStock()
+        private void ShowSelectedProductStock()
         {
             using (var dbContext = new ProjectContext())
             {
@@ -143,11 +164,11 @@ namespace Program.UI.Forms
 
                 if (newProduct != null)
                 {
-                    progressBarNewProductStock.Maximum = 100;
-                    progressBarNewProductStock.Value = newProduct.Stock;
-                    progressBarNewProductStock.ForeColor = newProduct.Stock < CriticalStockThreshold ? System.Drawing.Color.Red : System.Drawing.Color.Green;
+                    progressBarSelectedProductStock.Maximum = 100;
+                    progressBarSelectedProductStock.Value = newProduct.Stock;
+                    progressBarSelectedProductStock.ForeColor = newProduct.Stock < CriticalStockThreshold ? System.Drawing.Color.Red : System.Drawing.Color.Green;
 
-                    lblNewProductStock.Text = $"Stok: {newProduct.Stock}";
+                    lblNewProductStock.Text = $"Stock: {newProduct.Stock}";
                 }
             }
         }
@@ -160,11 +181,11 @@ namespace Program.UI.Forms
 
                 if (updatedProduct != null)
                 {
-                    progressBarNewProductStock.Maximum = 100;
-                    progressBarNewProductStock.Value = updatedProduct.Stock;
-                    progressBarNewProductStock.ForeColor = updatedProduct.Stock < CriticalStockThreshold ? System.Drawing.Color.Red : System.Drawing.Color.Green;
+                    progressBarSelectedProductStock.Maximum = 100;
+                    progressBarSelectedProductStock.Value = updatedProduct.Stock;
+                    progressBarSelectedProductStock.ForeColor = updatedProduct.Stock < CriticalStockThreshold ? System.Drawing.Color.Red : System.Drawing.Color.Green;
 
-                    lblNewProductStock.Text = $"Stok: {updatedProduct.Stock}";
+                    lblNewProductStock.Text = $"Stock: {updatedProduct.Stock}";
                 }
             }
         }
@@ -184,5 +205,82 @@ namespace Program.UI.Forms
                 }
             }
         }
+
+        private void listBoxProducts_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (listBoxProducts.SelectedIndex >= 0)
+            {
+                txtStockToUpdate.Enabled = true;
+                btnUpdateStock.Enabled = true;
+                string selectedProductName = listBoxProducts.SelectedItem.ToString();
+                ShowSelectedProductStock(selectedProductName);
+            }
+        }
+
+        private void ShowSelectedProductStock(string productName)
+        {
+            using (var dbContext = new ProjectContext())
+            {
+                var selectedProduct = dbContext.Materials.FirstOrDefault(p => p.MaterialName == productName);
+
+                if (selectedProduct != null)
+                {
+                    progressBarSelectedProductStock.Maximum = 100;
+                    progressBarSelectedProductStock.Value = selectedProduct.Stock;
+                    progressBarSelectedProductStock.ForeColor = selectedProduct.Stock < CriticalStockThreshold ? Color.Red : Color.Green;
+
+                    lblNewProductStock.Text = $"Stock: {selectedProduct.Stock}";
+                }
+            }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            DeleteSelectedProduct();
+        }
+
+        private void DeleteSelectedProduct()
+        {
+            if (listBoxProducts.SelectedIndex >= 0)
+            {
+                string selectedProductName = listBoxProducts.SelectedItem.ToString();
+
+                using (var dbContext = new ProjectContext())
+                {
+                    var productToDelete = dbContext.Materials.FirstOrDefault(p => p.MaterialName == selectedProductName);
+
+                    if (productToDelete != null)
+                    {
+                        dbContext.Materials.Remove(productToDelete);
+                        dbContext.SaveChanges();
+
+                        ShowCurrentStocks(listBoxProducts);
+
+                        MessageBox.Show("The product has been deleted successfully.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please select a product to be deleted.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+        private void ShowCurrentStocks(ListBox listBox)
+        {
+            using (var dbContext = new ProjectContext())
+            {
+                var products = dbContext.Materials.ToList();
+
+                listBox.Items.Clear();
+
+                foreach (var product in products)
+                {
+                    listBox.Items.Add(product.MaterialName);
+                }
+
+                ShowCurrentStockProgressBar(products);
+            }
+        }
+
     }
 }
