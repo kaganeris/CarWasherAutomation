@@ -25,7 +25,7 @@ namespace Program.DAL.Context
             if (!optionsBuilder.IsConfigured)
             {
                 //optionsBuilder.UseLazyLoadingProxies();
-                optionsBuilder.UseSqlServer(@"Server = DESKTOP-9OHK71U; Database = CarWashDB; Trusted_Connection = True;");
+                optionsBuilder.UseSqlServer(@"Server=DESKTOP-QLKMCAN; Database=CarWasherAutomationDB; Uid=sa; Pwd=123;");
             }
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -45,6 +45,16 @@ namespace Program.DAL.Context
             new VehicleMapping().Configure(modelBuilder.Entity<Vehicle>());
 
             new WashingProcessMapping().Configure(modelBuilder.Entity<WashingProcess>());
+
+            new SeedCustomers().Configure(modelBuilder.Entity<Customer>());
+
+            new SeedVehicles().Configure(modelBuilder.Entity<Vehicle>());
+
+            new SeedEmployees().Configure(modelBuilder.Entity<Employee>());
+
+            new SeedMaterials().Configure(modelBuilder.Entity<Material>());
+
+            new SeedSuppliers().Configure(modelBuilder.Entity<Supplier>());
 
         }
     }
