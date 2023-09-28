@@ -1,4 +1,5 @@
-﻿using Program.DAL.Context;
+﻿using Microsoft.EntityFrameworkCore;
+using Program.DAL.Context;
 using Program.DATA.Entities;
 using System;
 using System.Collections.Generic;
@@ -32,6 +33,10 @@ namespace Program.Business.Repositories
             wp.IsActive = false;
             db.WashingProcesses.Add(wp);
             db.SaveChanges();
+        }
+        public List<WashingProcess> GetAllQueueVehicles()
+        {
+            return db.WashingProcesses.Include(x => x.Vehicle.Customer).AsNoTracking().Where(x => x.IsQueue == true).ToList();
         }
     }
 }
