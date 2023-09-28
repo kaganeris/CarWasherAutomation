@@ -1,4 +1,5 @@
-﻿using Program.DAL.Context;
+﻿using Microsoft.EntityFrameworkCore;
+using Program.DAL.Context;
 using Program.DATA.Entities;
 using System;
 using System.Collections.Generic;
@@ -49,6 +50,9 @@ namespace Program.Business.Repositories
 
             if (result == null) return 0;
             else return result.TotalConsumption;
+        public List<WashingProcess> GetAllQueueVehicles()
+        {
+            return db.WashingProcesses.Include(x => x.Vehicle.Customer).AsNoTracking().Where(x => x.IsQueue == true).ToList();
         }
     }
 }

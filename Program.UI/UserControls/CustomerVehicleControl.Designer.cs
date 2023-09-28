@@ -28,28 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
-            pictureBox1 = new PictureBox();
+            pbBodyType = new PictureBox();
             label1 = new Label();
             label2 = new Label();
             lblPlate = new Label();
             lblCustomer = new Label();
-            button1 = new Button();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            btnAddToWasher = new Button();
+            lblBodyType = new Label();
+            label4 = new Label();
+            ((System.ComponentModel.ISupportInitialize)pbBodyType).BeginInit();
             SuspendLayout();
             // 
-            // pictureBox1
+            // pbBodyType
             // 
-            pictureBox1.Location = new Point(42, 4);
-            pictureBox1.Margin = new Padding(4);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(145, 70);
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
+            pbBodyType.Location = new Point(81, 4);
+            pbBodyType.Margin = new Padding(4);
+            pbBodyType.Name = "pbBodyType";
+            pbBodyType.Size = new Size(145, 70);
+            pbBodyType.SizeMode = PictureBoxSizeMode.StretchImage;
+            pbBodyType.TabIndex = 0;
+            pbBodyType.TabStop = false;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(22, 78);
+            label1.Location = new Point(8, 78);
             label1.Name = "label1";
             label1.Size = new Size(102, 21);
             label1.TabIndex = 1;
@@ -58,7 +61,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(22, 104);
+            label2.Location = new Point(8, 143);
             label2.Name = "label2";
             label2.Size = new Size(81, 21);
             label2.TabIndex = 2;
@@ -67,7 +70,7 @@
             // lblPlate
             // 
             lblPlate.AutoSize = true;
-            lblPlate.Location = new Point(120, 78);
+            lblPlate.Location = new Point(106, 78);
             lblPlate.Name = "lblPlate";
             lblPlate.Size = new Size(44, 21);
             lblPlate.TabIndex = 3;
@@ -76,47 +79,70 @@
             // lblCustomer
             // 
             lblCustomer.AutoSize = true;
-            lblCustomer.Location = new Point(109, 104);
+            lblCustomer.Location = new Point(95, 143);
             lblCustomer.Name = "lblCustomer";
             lblCustomer.Size = new Size(78, 21);
             lblCustomer.TabIndex = 4;
             lblCustomer.Text = "Customer";
             // 
-            // button1
+            // btnAddToWasher
             // 
-            button1.Location = new Point(203, 14);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 60);
-            button1.TabIndex = 5;
-            button1.Text = "Add to Washer";
-            button1.UseVisualStyleBackColor = true;
+            btnAddToWasher.Location = new Point(196, 91);
+            btnAddToWasher.Name = "btnAddToWasher";
+            btnAddToWasher.Size = new Size(75, 60);
+            btnAddToWasher.TabIndex = 5;
+            btnAddToWasher.Text = "Add to Washer";
+            btnAddToWasher.UseVisualStyleBackColor = true;
+            btnAddToWasher.Click += btnAddToWasher_Click;
+            // 
+            // lblBodyType
+            // 
+            lblBodyType.AutoSize = true;
+            lblBodyType.Location = new Point(96, 111);
+            lblBodyType.Name = "lblBodyType";
+            lblBodyType.Size = new Size(45, 21);
+            lblBodyType.TabIndex = 7;
+            lblBodyType.Text = "Body";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(8, 111);
+            label4.Name = "label4";
+            label4.Size = new Size(84, 21);
+            label4.TabIndex = 6;
+            label4.Text = "Body Type:";
             // 
             // CustomerVehicleControl
             // 
             AutoScaleDimensions = new SizeF(9F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(button1);
+            Controls.Add(lblBodyType);
+            Controls.Add(label4);
+            Controls.Add(btnAddToWasher);
             Controls.Add(lblCustomer);
             Controls.Add(lblPlate);
             Controls.Add(label2);
             Controls.Add(label1);
-            Controls.Add(pictureBox1);
+            Controls.Add(pbBodyType);
             Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             Margin = new Padding(4);
             Name = "CustomerVehicleControl";
-            Size = new Size(290, 130);
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            Size = new Size(286, 173);
+            ((System.ComponentModel.ISupportInitialize)pbBodyType).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private PictureBox pictureBox1;
+        private PictureBox pbBodyType;
         private Label label1;
         private Label label2;
         private Label lblPlate;
         private Label lblCustomer;
-        private Button button1;
+        private Button btnAddToWasher;
+        private Label lblBodyType;
+        private Label label4;
     }
 }

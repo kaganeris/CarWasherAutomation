@@ -14,5 +14,9 @@ namespace Program.DATA.Entities
         public string? Address { get; set; }
 
         public List<WashingProcess> WashingProcess { get; set; }
+        public override string ToString()
+        {
+            return FirstName + " " + LastName;
+        }
     }
 }

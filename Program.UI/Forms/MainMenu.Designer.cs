@@ -83,6 +83,7 @@
             btnMaterialStock.Text = "        Material Stock";
             btnMaterialStock.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnMaterialStock.UseVisualStyleBackColor = false;
+            btnMaterialStock.Click += btnMaterialStock_Click;
             // 
             // btnWasherStatus
             // 
