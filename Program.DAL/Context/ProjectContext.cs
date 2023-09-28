@@ -25,7 +25,7 @@ namespace Program.DAL.Context
             if (!optionsBuilder.IsConfigured)
             {
                 //optionsBuilder.UseLazyLoadingProxies();
-                optionsBuilder.UseSqlServer(@"Server=DESKTOP-QLKMCAN; Database=CarWasherAutomationDB; Uid=sa; Pwd=123;");
+                optionsBuilder.UseSqlServer(@"Server = DESKTOP-9OHK71U; Database = CarWasherDB; Trusted_Connection = True;");
             }
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
