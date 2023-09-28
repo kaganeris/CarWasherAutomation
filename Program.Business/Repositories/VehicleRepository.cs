@@ -40,7 +40,6 @@ namespace Program.Business.Repositories
         {
             return db.Vehicles
                 .Include(x=>x.Customer)
-                //.Where(x=> x.Customer.Name.Contains(text) || x.Plate.StartsWith(text))
                 .Where(x=>x.IsActive==true)
                 .ToList();
         }
