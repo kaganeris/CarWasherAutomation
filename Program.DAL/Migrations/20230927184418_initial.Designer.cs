@@ -12,8 +12,8 @@ using Program.DAL.Context;
 namespace Program.DAL.Migrations
 {
     [DbContext(typeof(ProjectContext))]
-    [Migration("20230926080955_init")]
-    partial class init
+    [Migration("20230927184418_initial")]
+    partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -51,10 +51,10 @@ namespace Program.DAL.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("SubscribeDate")
+                    b.Property<DateTime?>("SubscribeDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("SubscribeEndingDate")
+                    b.Property<DateTime?>("SubscribeEndingDate")
                         .HasColumnType("datetime2");
 
                     b.Property<int>("SubscribeType")
@@ -74,7 +74,6 @@ namespace Program.DAL.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"), 1L, 1);
 
                     b.Property<string>("Address")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("CreatedDate")
@@ -198,7 +197,6 @@ namespace Program.DAL.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("TitleofContact")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ID");
@@ -218,7 +216,6 @@ namespace Program.DAL.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Brand")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("CreatedDate")
@@ -234,14 +231,17 @@ namespace Program.DAL.Migrations
                         .HasColumnType("bit");
 
                     b.Property<string>("Model")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime?>("ModifiedDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("ProductionDate")
-                        .HasColumnType("int");
+                    b.Property<string>("Plate")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("ProductionDate")
+                        .HasColumnType("datetime2");
 
                     b.HasKey("ID");
 
@@ -276,9 +276,6 @@ namespace Program.DAL.Migrations
                     b.Property<bool>("IsQueue")
                         .HasColumnType("bit");
 
-                    b.Property<int>("MaterialID")
-                        .HasColumnType("int");
-
                     b.Property<DateTime?>("ModifiedDate")
                         .HasColumnType("datetime2");
 
@@ -288,21 +285,20 @@ namespace Program.DAL.Migrations
                     b.Property<int>("VehicleID")
                         .HasColumnType("int");
 
-                    b.Property<double>("VehiclePollution")
+                    b.Property<double?>("VehiclePollution")
                         .HasColumnType("float");
 
                     b.Property<decimal>("WashingPrice")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<double>("WaterConsumption")
+                    b.Property<double?>("WaterConsumption")
                         .HasColumnType("float");
 
                     b.HasKey("ID");
 
                     b.HasIndex("EmployeeID");
 
-                    b.HasIndex("VehicleID")
-                        .IsUnique();
+                    b.HasIndex("VehicleID");
 
                     b.ToTable("WashingProcesses");
                 });
@@ -357,8 +353,8 @@ namespace Program.DAL.Migrations
                         .IsRequired();
 
                     b.HasOne("Program.DATA.Entities.Vehicle", "Vehicle")
-                        .WithOne("WashingProcess")
-                        .HasForeignKey("Program.DATA.Entities.WashingProcess", "VehicleID")
+                        .WithMany("WashingProcess")
+                        .HasForeignKey("VehicleID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -389,8 +385,7 @@ namespace Program.DAL.Migrations
 
             modelBuilder.Entity("Program.DATA.Entities.Vehicle", b =>
                 {
-                    b.Navigation("WashingProcess")
-                        .IsRequired();
+                    b.Navigation("WashingProcess");
                 });
 
             modelBuilder.Entity("Program.DATA.Entities.WashingProcess", b =>

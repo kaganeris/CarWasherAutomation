@@ -147,12 +147,12 @@
         #endregion
 
         private GroupBox grpWasher3;
-        private FlowLayoutPanel flpWasher3;
         private GroupBox grpWasher2;
-        private FlowLayoutPanel flpWasher2;
         private GroupBox grpQueue;
-        private FlowLayoutPanel flpQueue;
         private GroupBox grpWasher1;
-        private FlowLayoutPanel flpWasher1;
+        public FlowLayoutPanel flpWasher3;
+        public FlowLayoutPanel flpWasher2;
+        public FlowLayoutPanel flpWasher1;
+        public FlowLayoutPanel flpQueue;
     }
 }

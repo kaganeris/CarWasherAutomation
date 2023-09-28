@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Program.Business.Repositories;
+using Program.DATA.Entities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,10 +18,14 @@ namespace Program.UI.Forms
         {
             InitializeComponent();
         }
-
+        WashingProcessRepository wpRep;
         private void Dashboard_Load(object sender, EventArgs e)
         {
-
+            wpRep = new WashingProcessRepository();
+            for (int i = 0; i < 15; i++)
+            {
+                chartWaterCons.Series["Water Consumption"].Points.AddXY(DateTime.Now.AddDays(-i).Date, wpRep.WaterConsOfDay(DateTime.Now.AddDays(-i)));
+            }
         }
     }
 }

@@ -34,9 +34,11 @@ namespace Program.Business.Repositories
         public void CheckSubscribeType(Customer customer)
         {
             if (VisitTimes(6, customer) > 15) customer.SubscribeType = SubscribeType.Premium;
-            if (VisitTimes(3, customer) > 7) customer.SubscribeType = SubscribeType.Classic;
-            if (VisitTimes(1, customer) > 3) customer.SubscribeType = SubscribeType.Basic;
+            else if (VisitTimes(3, customer) > 7) customer.SubscribeType = SubscribeType.Classic;
+            else if (VisitTimes(1, customer) > 3) customer.SubscribeType = SubscribeType.Basic;
             else customer.SubscribeType = SubscribeType.None;
+            if(customer.SubscribeType == SubscribeType.None) customer.IsSubscriber = false;
+            else customer.IsSubscriber = true;
         }
         public int VisitTimes(int month, Customer customer)
         {

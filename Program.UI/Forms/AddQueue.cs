@@ -15,21 +15,25 @@ namespace Program.UI.Forms
 {
     public partial class AddQueue : Form
     {
-        public AddQueue()
+
+        public AddQueue(MainMenu _anaform)
         {
+            anaform = _anaform;
             InitializeComponent();
         }
+        MainMenu anaform;
         VehicleRepository vehicleRep;
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
+            vehicleRep = new VehicleRepository();
+            lvCustomers.Items.Clear();
             int index = 0;
-            if (txtSearch.Text == string.Empty) lvCustomers.Items.Clear();
-            else
+            if (txtSearch.Text != string.Empty && vehicleRep.SearchVehicles(VehicleList, txtSearch.Text).Count > 0)
             {
-                foreach (Vehicle vehicle in vehicleRep.SearchVehicles(txtSearch.Text))
+                foreach (Vehicle vehicle in vehicleRep.SearchVehicles(VehicleList, txtSearch.Text))
                 {
                     index++;
-                    string[] arr = { index.ToString(), vehicle.Customer.Name };
+                    string[] arr = { index.ToString(), vehicle.Customer.Name, vehicle.Plate, vehicle.BodyType.ToString() };
                     ListViewItem lvi = new ListViewItem(arr);
                     lvCustomers.Items.Add(lvi);
                     lvi.Tag = vehicle;
@@ -45,19 +49,21 @@ namespace Program.UI.Forms
             rbInterior.Checked = true;
 
             SelectedVehicle = (Vehicle)lvCustomers.SelectedItems[0].Tag;
-            wp.Vehicle = SelectedVehicle;
             wp.VehicleID = SelectedVehicle.ID;
             lblBodyType.Text = "Body Type: " + SelectedVehicle.BodyType.ToString();
             lblBrand.Text = "Brand: " + SelectedVehicle.Brand;
+            lblPlate.Text = "Plate: " + SelectedVehicle.Plate;
             lblModel.Text = "Model: " + SelectedVehicle.Model;
             lblPrice.Text = "Price: " + vehicleRep.GetPrice(SelectedVehicle, "Interior").ToString();
+            btnAddQueue.Enabled = false;
         }
 
         private void rbInterior_CheckedChanged(object sender, EventArgs e)
         {
             if (rbInterior.Checked)
             {
-                lblPrice.Text = "Price: " + vehicleRep.GetPrice(SelectedVehicle, "Interior").ToString();
+                processType = "Interior";
+                lblPrice.Text = "Price: " + vehicleRep.GetPrice(SelectedVehicle, processType).ToString();
                 wp.ProcessType = ProcessType.Interior;
             }
 
@@ -67,7 +73,8 @@ namespace Program.UI.Forms
         {
             if (rbExterior.Checked)
             {
-                lblPrice.Text = "Price: " + vehicleRep.GetPrice(SelectedVehicle, "Exterior").ToString();
+                processType = "Exterior";
+                lblPrice.Text = "Price: " + vehicleRep.GetPrice(SelectedVehicle, processType).ToString();
                 wp.ProcessType = ProcessType.Exterior;
             }
         }
@@ -76,7 +83,8 @@ namespace Program.UI.Forms
         {
             if (rbFull.Checked)
             {
-                lblPrice.Text = "Price: " + vehicleRep.GetPrice(SelectedVehicle, "Full").ToString();
+                processType = "Full";
+                lblPrice.Text = "Price: " + vehicleRep.GetPrice(SelectedVehicle, processType).ToString();
                 wp.ProcessType = ProcessType.Full;
             }
         }
@@ -86,13 +94,35 @@ namespace Program.UI.Forms
             wpRep = new WashingProcessRepository();
 
             wp.IsQueue = true;
+            wp.WashingPrice = vehicleRep.GetPrice(SelectedVehicle, processType);
+            wp.WaterConsumption = vehicleRep.GetWaterConsumption(wp);
+            wp.Discount = vehicleRep.GetDiscount(SelectedVehicle.Customer);
             wpRep.Add(wp);
-            DialogResult = DialogResult.OK;
+            Vehicles vehicles = new Vehicles();
+            vehicles.MdiParent = anaform;
+            vehicles.Dock = DockStyle.Fill;
+            anaform.ActiveMdiChild.Close();
+            vehicles.Show();
         }
         WashingProcess wp;
+        List<Vehicle> VehicleList;
         private void AddQueue_Load(object sender, EventArgs e)
         {
             wp = new WashingProcess();
+            wp.EmployeeID = 2;
+            vehicleRep = new VehicleRepository();
+            VehicleList = vehicleRep.GetVehicles();
+            btnAddQueue.Enabled = false;
+        }
+        CustomerRepository customerRep;
+        string processType = "";
+        private void btnCheckSubs_Click(object sender, EventArgs e)
+        {
+            customerRep = new CustomerRepository();
+            customerRep.CheckSubscribeType(SelectedVehicle.Customer);
+            lblSubs.Text = "Subscription: " + SelectedVehicle.Customer.SubscribeType.ToString();
+            btnAddQueue.Enabled = true;
+            lblPrice.Text = "Price: " + vehicleRep.GetPrice(SelectedVehicle, processType).ToString();
         }
     }
 }

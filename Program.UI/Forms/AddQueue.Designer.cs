@@ -34,6 +34,7 @@
             columnHeader1 = new ColumnHeader();
             columnHeader2 = new ColumnHeader();
             columnHeader3 = new ColumnHeader();
+            columnHeader4 = new ColumnHeader();
             btnAddQueue = new Button();
             lblBrand = new Label();
             lblModel = new Label();
@@ -43,34 +44,41 @@
             rbExterior = new RadioButton();
             rbFull = new RadioButton();
             groupBox1 = new GroupBox();
+            lblDiscount = new Label();
+            lblSubs = new Label();
+            btnCheckSubs = new Button();
+            lblPlate = new Label();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
             // txtSearch
             // 
             txtSearch.BorderStyle = BorderStyle.None;
-            txtSearch.Location = new Point(98, 34);
+            txtSearch.Location = new Point(135, 36);
+            txtSearch.Margin = new Padding(4, 3, 4, 3);
             txtSearch.Name = "txtSearch";
-            txtSearch.Size = new Size(283, 20);
+            txtSearch.Size = new Size(251, 23);
             txtSearch.TabIndex = 0;
             txtSearch.TextChanged += txtSearch_TextChanged;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(19, 37);
+            label1.Location = new Point(26, 39);
+            label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(53, 20);
+            label1.Size = new Size(71, 21);
             label1.TabIndex = 2;
             label1.Text = "Search";
             // 
             // lvCustomers
             // 
-            lvCustomers.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2, columnHeader3 });
+            lvCustomers.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2, columnHeader3, columnHeader4 });
             lvCustomers.FullRowSelect = true;
-            lvCustomers.Location = new Point(407, 12);
+            lvCustomers.Location = new Point(444, 13);
+            lvCustomers.Margin = new Padding(4, 3, 4, 3);
             lvCustomers.Name = "lvCustomers";
-            lvCustomers.Size = new Size(463, 506);
+            lvCustomers.Size = new Size(460, 687);
             lvCustomers.TabIndex = 3;
             lvCustomers.UseCompatibleStateImageBehavior = false;
             lvCustomers.View = View.Details;
@@ -79,22 +87,29 @@
             // columnHeader1
             // 
             columnHeader1.Text = "Index";
+            columnHeader1.Width = 65;
             // 
             // columnHeader2
             // 
             columnHeader2.Text = "Name";
-            columnHeader2.Width = 200;
+            columnHeader2.Width = 120;
             // 
             // columnHeader3
             // 
             columnHeader3.Text = "Vehicle Plate";
-            columnHeader3.Width = 200;
+            columnHeader3.Width = 140;
+            // 
+            // columnHeader4
+            // 
+            columnHeader4.Text = "Body Type";
+            columnHeader4.Width = 140;
             // 
             // btnAddQueue
             // 
-            btnAddQueue.Location = new Point(260, 459);
+            btnAddQueue.Location = new Point(261, 634);
+            btnAddQueue.Margin = new Padding(4, 3, 4, 3);
             btnAddQueue.Name = "btnAddQueue";
-            btnAddQueue.Size = new Size(121, 35);
+            btnAddQueue.Size = new Size(166, 37);
             btnAddQueue.TabIndex = 4;
             btnAddQueue.Text = "Add Queue";
             btnAddQueue.UseVisualStyleBackColor = true;
@@ -103,36 +118,40 @@
             // lblBrand
             // 
             lblBrand.AutoSize = true;
-            lblBrand.Location = new Point(22, 101);
+            lblBrand.Location = new Point(30, 151);
+            lblBrand.Margin = new Padding(4, 0, 4, 0);
             lblBrand.Name = "lblBrand";
-            lblBrand.Size = new Size(55, 20);
+            lblBrand.Size = new Size(70, 21);
             lblBrand.TabIndex = 5;
             lblBrand.Text = "Brand: ";
             // 
             // lblModel
             // 
             lblModel.AutoSize = true;
-            lblModel.Location = new Point(22, 155);
+            lblModel.Location = new Point(30, 198);
+            lblModel.Margin = new Padding(4, 0, 4, 0);
             lblModel.Name = "lblModel";
-            lblModel.Size = new Size(59, 20);
+            lblModel.Size = new Size(76, 21);
             lblModel.TabIndex = 6;
             lblModel.Text = "Model: ";
             // 
             // lblBodyType
             // 
             lblBodyType.AutoSize = true;
-            lblBodyType.Location = new Point(22, 210);
+            lblBodyType.Location = new Point(16, 245);
+            lblBodyType.Margin = new Padding(4, 0, 4, 0);
             lblBodyType.Name = "lblBodyType";
-            lblBodyType.Size = new Size(81, 20);
+            lblBodyType.Size = new Size(108, 21);
             lblBodyType.TabIndex = 7;
             lblBodyType.Text = "Body Type:";
             // 
             // lblPrice
             // 
             lblPrice.AutoSize = true;
-            lblPrice.Location = new Point(184, 394);
+            lblPrice.Location = new Point(247, 576);
+            lblPrice.Margin = new Padding(4, 0, 4, 0);
             lblPrice.Name = "lblPrice";
-            lblPrice.Size = new Size(48, 20);
+            lblPrice.Size = new Size(63, 21);
             lblPrice.TabIndex = 8;
             lblPrice.Text = "Price: ";
             // 
@@ -141,9 +160,10 @@
             rbInterior.AutoSize = true;
             rbInterior.Checked = true;
             rbInterior.Enabled = false;
-            rbInterior.Location = new Point(22, 267);
+            rbInterior.Location = new Point(26, 320);
+            rbInterior.Margin = new Padding(4, 3, 4, 3);
             rbInterior.Name = "rbInterior";
-            rbInterior.Size = new Size(78, 24);
+            rbInterior.Size = new Size(91, 25);
             rbInterior.TabIndex = 9;
             rbInterior.TabStop = true;
             rbInterior.Text = "Interior";
@@ -154,9 +174,10 @@
             // 
             rbExterior.AutoSize = true;
             rbExterior.Enabled = false;
-            rbExterior.Location = new Point(22, 309);
+            rbExterior.Location = new Point(26, 372);
+            rbExterior.Margin = new Padding(4, 3, 4, 3);
             rbExterior.Name = "rbExterior";
-            rbExterior.Size = new Size(81, 24);
+            rbExterior.Size = new Size(94, 25);
             rbExterior.TabIndex = 10;
             rbExterior.TabStop = true;
             rbExterior.Text = "Exterior";
@@ -167,9 +188,10 @@
             // 
             rbFull.AutoSize = true;
             rbFull.Enabled = false;
-            rbFull.Location = new Point(22, 351);
+            rbFull.Location = new Point(26, 424);
+            rbFull.Margin = new Padding(4, 3, 4, 3);
             rbFull.Name = "rbFull";
-            rbFull.Size = new Size(53, 24);
+            rbFull.Size = new Size(57, 25);
             rbFull.TabIndex = 11;
             rbFull.TabStop = true;
             rbFull.Text = "Full";
@@ -178,6 +200,10 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(lblDiscount);
+            groupBox1.Controls.Add(lblSubs);
+            groupBox1.Controls.Add(btnCheckSubs);
+            groupBox1.Controls.Add(lblPlate);
             groupBox1.Controls.Add(txtSearch);
             groupBox1.Controls.Add(rbFull);
             groupBox1.Controls.Add(label1);
@@ -188,21 +214,64 @@
             groupBox1.Controls.Add(lblPrice);
             groupBox1.Controls.Add(lblModel);
             groupBox1.Controls.Add(lblBodyType);
-            groupBox1.Location = new Point(1, 12);
+            groupBox1.Location = new Point(1, 13);
+            groupBox1.Margin = new Padding(4, 3, 4, 3);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(400, 506);
+            groupBox1.Padding = new Padding(4, 3, 4, 3);
+            groupBox1.Size = new Size(435, 713);
             groupBox1.TabIndex = 12;
             groupBox1.TabStop = false;
             // 
+            // lblDiscount
+            // 
+            lblDiscount.AutoSize = true;
+            lblDiscount.Location = new Point(247, 516);
+            lblDiscount.Margin = new Padding(4, 0, 4, 0);
+            lblDiscount.Name = "lblDiscount";
+            lblDiscount.Size = new Size(96, 21);
+            lblDiscount.TabIndex = 15;
+            lblDiscount.Text = "Discount: ";
+            // 
+            // lblSubs
+            // 
+            lblSubs.AutoSize = true;
+            lblSubs.Location = new Point(21, 576);
+            lblSubs.Name = "lblSubs";
+            lblSubs.Size = new Size(119, 21);
+            lblSubs.TabIndex = 14;
+            lblSubs.Text = "Subscription:";
+            // 
+            // btnCheckSubs
+            // 
+            btnCheckSubs.Location = new Point(16, 495);
+            btnCheckSubs.Name = "btnCheckSubs";
+            btnCheckSubs.Size = new Size(138, 62);
+            btnCheckSubs.TabIndex = 13;
+            btnCheckSubs.Text = "Check Subscription";
+            btnCheckSubs.UseVisualStyleBackColor = true;
+            btnCheckSubs.Click += btnCheckSubs_Click;
+            // 
+            // lblPlate
+            // 
+            lblPlate.AutoSize = true;
+            lblPlate.Location = new Point(30, 104);
+            lblPlate.Margin = new Padding(4, 0, 4, 0);
+            lblPlate.Name = "lblPlate";
+            lblPlate.Size = new Size(65, 21);
+            lblPlate.TabIndex = 12;
+            lblPlate.Text = "Plate: ";
+            // 
             // AddQueue
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(11F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(879, 532);
+            ClientSize = new Size(939, 725);
             Controls.Add(groupBox1);
             Controls.Add(lvCustomers);
+            Font = new Font("Century Gothic", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             ForeColor = SystemColors.ActiveCaptionText;
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(4, 3, 4, 3);
             Name = "AddQueue";
             Text = "AddQueue";
             Load += AddQueue_Load;
@@ -228,5 +297,10 @@
         private RadioButton rbExterior;
         private RadioButton rbFull;
         private GroupBox groupBox1;
+        private Label lblPlate;
+        private Button btnCheckSubs;
+        private ColumnHeader columnHeader4;
+        private Label lblSubs;
+        private Label lblDiscount;
     }
 }
