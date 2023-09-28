@@ -1,5 +1,6 @@
 ﻿using Program.Business.Repositories;
 using Program.DATA.Entities;
+using Program.DATA.Enums;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -25,6 +26,18 @@ namespace Program.UI.Forms
             for (int i = 0; i < 15; i++)
             {
                 chartWaterCons.Series["Water Consumption"].Points.AddXY(DateTime.Now.AddDays(-i).Date, wpRep.WaterConsOfDay(DateTime.Now.AddDays(-i)));
+                chartEndorsment.Series["Endorsment"].Points.AddXY(DateTime.Now.AddDays(-i).Date, wpRep.EndorsmentOfDay(DateTime.Now.AddDays(-i)));
+                chartWashedCars.Series["WashedCars"].Points.AddXY(DateTime.Now.AddDays(-i).Date, wpRep.WashedCarsOfDay(DateTime.Now.AddDays(-i)));
+            }
+            piechart();
+        }
+
+        private void piechart()
+        {
+            foreach(BodyType bodyType in Enum.GetValues(typeof(BodyType)))
+            {
+                if(wpRep.WashingByBodyType(bodyType)>0)
+                chartWashByBodyType.Series["WashingByBodyType"].Points.AddXY(bodyType.ToString(),wpRep.WashingByBodyType(bodyType));
             }
         }
     }

@@ -55,6 +55,7 @@ namespace Program.UI.Forms
             lblPlate.Text = "Plate: " + SelectedVehicle.Plate;
             lblModel.Text = "Model: " + SelectedVehicle.Model;
             lblPrice.Text = "Price: " + vehicleRep.GetPrice(SelectedVehicle, "Interior").ToString();
+            lblDiscount.Text = "Discount: " +vehicleRep.GetDiscount(SelectedVehicle.Customer).ToString();
             btnAddQueue.Enabled = false;
         }
 
@@ -109,7 +110,7 @@ namespace Program.UI.Forms
         private void AddQueue_Load(object sender, EventArgs e)
         {
             wp = new WashingProcess();
-            wp.EmployeeID = 2;
+            wp.EmployeeID = 1;
             vehicleRep = new VehicleRepository();
             VehicleList = vehicleRep.GetVehicles();
             btnAddQueue.Enabled = false;
@@ -123,6 +124,7 @@ namespace Program.UI.Forms
             lblSubs.Text = "Subscription: " + SelectedVehicle.Customer.SubscribeType.ToString();
             btnAddQueue.Enabled = true;
             lblPrice.Text = "Price: " + vehicleRep.GetPrice(SelectedVehicle, processType).ToString();
+            lblDiscount.Text = "Discount: " + vehicleRep.GetDiscount(SelectedVehicle.Customer).ToString();
         }
     }
 }

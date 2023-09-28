@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Program.DAL.Context;
 using Program.DATA.Entities;
+using Program.DATA.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -39,7 +40,17 @@ namespace Program.Business.Repositories
         {
             return db.WashingProcesses.Where(where).ToList(); 
         }
+        public double EndorsmentOfDay(DateTime dateTime)
+        {
+            var result =
+                db.WashingProcesses
+                .Where(x => x.IsActive == true && x.CreatedDate.Date == dateTime.Date)
+                .GroupBy(x => new { x.CreatedDate.Date })
+                .Select(x => new { endorsment = x.Sum(y => y.WashingPrice) }).FirstOrDefault();
 
+            if (result == null) return 0;
+            else return (double)result.endorsment;
+        }
         public double WaterConsOfDay(DateTime dateTime)
         {
             var result =
@@ -54,6 +65,20 @@ namespace Program.Business.Repositories
         public List<WashingProcess> GetAllQueueVehicles()
         {
             return db.WashingProcesses.Include(x => x.Vehicle.Customer).AsNoTracking().Where(x => x.IsQueue == true).ToList();
+        }
+
+        public double WashedCarsOfDay(DateTime dateTime)
+        {
+            return db.WashingProcesses
+                .Where(x => x.IsActive == true && x.CreatedDate.Date == dateTime.Date)
+                .Count();
+        }
+
+        public double WashingByBodyType(BodyType bodyType)
+        {
+            return db.WashingProcesses
+                .Where(x => x.IsActive == true && x.Vehicle.BodyType==bodyType)
+                .Count();
         }
     }
 }
