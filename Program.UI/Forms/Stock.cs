@@ -165,7 +165,7 @@ namespace Program.UI.Forms
                 if (newProduct != null)
                 {
                     progressBarSelectedProductStock.Maximum = 100;
-                    progressBarSelectedProductStock.Value = newProduct.Stock;
+                    progressBarSelectedProductStock.Value = newProduct.Stock>100 ? 100: newProduct.Stock;
                     progressBarSelectedProductStock.ForeColor = newProduct.Stock < CriticalStockThreshold ? System.Drawing.Color.Red : System.Drawing.Color.Green;
 
                     lblNewProductStock.Text = $"Stock: {newProduct.Stock}";
@@ -182,7 +182,7 @@ namespace Program.UI.Forms
                 if (updatedProduct != null)
                 {
                     progressBarSelectedProductStock.Maximum = 100;
-                    progressBarSelectedProductStock.Value = updatedProduct.Stock;
+                    progressBarSelectedProductStock.Value = updatedProduct.Stock > 100 ? 100: updatedProduct.Stock;
                     progressBarSelectedProductStock.ForeColor = updatedProduct.Stock < CriticalStockThreshold ? System.Drawing.Color.Red : System.Drawing.Color.Green;
 
                     lblNewProductStock.Text = $"Stock: {updatedProduct.Stock}";
@@ -226,7 +226,7 @@ namespace Program.UI.Forms
                 if (selectedProduct != null)
                 {
                     progressBarSelectedProductStock.Maximum = 100;
-                    progressBarSelectedProductStock.Value = selectedProduct.Stock;
+                    progressBarSelectedProductStock.Value = selectedProduct.Stock > 100 ? 100 : selectedProduct.Stock;
                     progressBarSelectedProductStock.ForeColor = selectedProduct.Stock < CriticalStockThreshold ? Color.Red : Color.Green;
 
                     lblNewProductStock.Text = $"Stock: {selectedProduct.Stock}";
