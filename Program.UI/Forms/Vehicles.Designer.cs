@@ -96,6 +96,7 @@
             // 
             // flpQueue
             // 
+            flpQueue.AutoScroll = true;
             flpQueue.Location = new Point(11, 28);
             flpQueue.Margin = new Padding(4);
             flpQueue.Name = "flpQueue";

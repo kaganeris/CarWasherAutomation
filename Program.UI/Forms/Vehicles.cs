@@ -31,7 +31,7 @@ namespace Program.UI.Forms
             flpQueue.Controls.Clear();
             foreach (var item in washingProcessRepository.GetAllQueueVehicles())
             {
-                CustomerVehicleControl customerVehicleControl = new CustomerVehicleControl(this, item,mainMenu);
+                CustomerVehicleControl customerVehicleControl = new CustomerVehicleControl(this, item, mainMenu);
                 customerVehicleControl.Plate = item.Vehicle.Plate;
                 customerVehicleControl.Customer = item.Vehicle.Customer.Name;
                 customerVehicleControl.BodyType = item.Vehicle.BodyType.ToString();
