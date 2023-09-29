@@ -28,7 +28,8 @@ namespace Program.DAL.NewFolder
                         Name = "Mert Demirci",
                         IsSubscriber = true,
                         SubscribeType = DATA.Enums.SubscribeType.Classic,
-                        SubscribeDate = new DateTime(2023,08,21)
+                        SubscribeDate = new DateTime(2023,08,21),
+                        SubscribeEndingDate = new DateTime(2023,10,21)
                     },
                     new Customer
                     {
@@ -36,7 +37,8 @@ namespace Program.DAL.NewFolder
                         Name = "Levent Adnan",
                         IsSubscriber = true,
                         SubscribeType = DATA.Enums.SubscribeType.Classic,
-                        SubscribeDate = new DateTime(2023 , 09 , 21)
+                        SubscribeDate = new DateTime(2023 , 09 , 21),
+                        SubscribeEndingDate = new DateTime(2023, 10, 3)
                     },
                     new Customer
                     {
@@ -51,7 +53,8 @@ namespace Program.DAL.NewFolder
                         Name = "İdris Bahadır",
                         IsSubscriber = true,
                         SubscribeType = DATA.Enums.SubscribeType.Premium,
-                        SubscribeDate = new DateTime(2022 , 09 , 21)
+                        SubscribeDate = new DateTime(2022 , 09 , 21),
+                        SubscribeEndingDate = new DateTime(2023, 10, 6)
                     },
                     new Customer
                     {
@@ -59,7 +62,8 @@ namespace Program.DAL.NewFolder
                         Name = "Okan Şahin",
                         IsSubscriber = true,
                         SubscribeType = DATA.Enums.SubscribeType.Basic,
-                        SubscribeDate = new DateTime(2023 , 09 , 05)
+                        SubscribeDate = new DateTime(2023 , 09 , 05),
+                        SubscribeEndingDate = new DateTime(2023, 11, 21)
                     },
                     new Customer
                     {
@@ -67,7 +71,8 @@ namespace Program.DAL.NewFolder
                         Name = "Turgay Mert",
                         IsSubscriber = true,
                         SubscribeType = DATA.Enums.SubscribeType.Basic,
-                        SubscribeDate = new DateTime(2023, 09, 25)
+                        SubscribeDate = new DateTime(2023, 09, 25),
+                        SubscribeEndingDate = new DateTime(2023, 10, 01)
                     },
                     new Customer
                     {
@@ -75,7 +80,8 @@ namespace Program.DAL.NewFolder
                         Name = "Gözde Emrah",
                         IsSubscriber = true,
                         SubscribeType = DATA.Enums.SubscribeType.Premium,
-                        SubscribeDate = new DateTime(2023, 09, 10)
+                        SubscribeDate = new DateTime(2023, 09, 10),
+                        SubscribeEndingDate = new DateTime(2023, 12, 7)
                     },
                     new Customer
                     {

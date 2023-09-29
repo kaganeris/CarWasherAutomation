@@ -113,7 +113,7 @@ namespace Program.UI.Forms
         {
             lblVehiclesCount.Text = wpr.GetTodaysCustomerCount().ToString();
             lblTodayCustomerCount.Text = wpr.GetTodaysVehiclesCount().ToString();
-            lblTodayIncome.Text = wpr.GetTodaysInCome().ToString();
+            lblTodayIncome.Text = wpr.GetTodaysInCome().ToString("C2");
         }
 
         private void button1_Click(object sender, EventArgs e)

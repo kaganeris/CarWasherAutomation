@@ -44,7 +44,7 @@ namespace Program.Business.Repositories
         {
             var result =
                 db.WashingProcesses
-                .Where(x => x.IsActive == true && x.CreatedDate.Date == dateTime.Date)
+                .Where(x => x.IsActive == true && x.CreatedDate.Date == dateTime.Date && x.IsQueue == false)
                 .GroupBy(x => new { x.CreatedDate.Date })
                 .Select(x => new { endorsment = x.Sum(y => y.WashingPrice) }).FirstOrDefault();
 

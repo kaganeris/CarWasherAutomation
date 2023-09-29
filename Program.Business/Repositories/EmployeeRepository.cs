@@ -36,7 +36,7 @@ namespace Program.Business.Repositories
         }
         public List<Employee> GetAllEmployees()
         {
-            return db.Employees.AsNoTracking().ToList();
+            return db.Employees.AsNoTracking().Where(x => x.FirstName != "Unknown").ToList();
         }
     }
 }
