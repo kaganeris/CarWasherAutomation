@@ -16,11 +16,13 @@ namespace Program.UI.UserControls
     {
         Vehicles _vehicles;
         WashingProcess wp;
-        public CustomerVehicleControl(Vehicles vehicles,WashingProcess washingProcess)
+        MainMenu mainMenu;
+        public CustomerVehicleControl(Vehicles vehicles,WashingProcess washingProcess,MainMenu _mainMenu)
         {
             InitializeComponent();
             wp = washingProcess;
             _vehicles = vehicles;
+            mainMenu = _mainMenu;
         }
 
         public Image BodyTypeImage
@@ -57,7 +59,7 @@ namespace Program.UI.UserControls
         }
         public WasherControl WasherAdd()
         {
-            WasherControl washerControl = new WasherControl(_vehicles,wp,this);
+            WasherControl washerControl = new WasherControl(_vehicles,wp,this,mainMenu);
             washerControl.Plate = this.Plate;
             washerControl.Customer = this.Customer;
             washerControl.BodyType = this.BodyType;

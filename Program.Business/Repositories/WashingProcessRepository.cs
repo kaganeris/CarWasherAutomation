@@ -80,5 +80,17 @@ namespace Program.Business.Repositories
                 .Where(x => x.IsActive == true && x.Vehicle.BodyType==bodyType)
                 .Count();
         }
+        public int GetTodaysCustomerCount()
+        {
+            return db.WashingProcesses.Where(x => x.IsQueue == false && ((DateTime)x.ModifiedDate).Date == DateTime.Now.Date).OrderBy(x => x.VehicleID).Distinct().Count();
+        }
+        public int GetTodaysVehiclesCount()
+        {
+            return db.WashingProcesses.AsNoTracking().Include(x => x.Vehicle).Where(x => x.IsQueue == false && ((DateTime)x.ModifiedDate).Date == DateTime.Now.Date).Select(x => x.Vehicle.CustomerID).Distinct().Count();
+        }
+        public decimal GetTodaysInCome()
+        {
+            return db.WashingProcesses.AsNoTracking().Where(x => x.IsQueue == false && ((DateTime)x.ModifiedDate).Date == DateTime.Now.Date).Sum(x => x.WashingPrice);
+        }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Program.Business.Repositories;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -40,9 +41,12 @@ namespace Program.UI.Forms
         private static extern bool ReleaseCapture();
 
         #endregion
+        WashingProcessRepository wpr;
         private void MainMenu_Load(object sender, EventArgs e)
         {
             DashboardShow();
+            wpr = new WashingProcessRepository();
+            UpdateTodaysInfos();
         }
         private void btnDashboard_Click(object sender, EventArgs e)
         {
@@ -82,7 +86,7 @@ namespace Program.UI.Forms
         }
         public void WasherStatusLoad()
         {
-            Vehicles vehicles = new Vehicles();
+            Vehicles vehicles = new Vehicles(this);
             vehicles.MdiParent = this;
             vehicles.Dock = DockStyle.Fill;
             vehicles.Show();
@@ -104,6 +108,17 @@ namespace Program.UI.Forms
             stock.MdiParent = this;
             stock.Dock = DockStyle.Fill;
             stock.Show();
+        }
+        public void UpdateTodaysInfos()
+        {
+            lblVehiclesCount.Text = wpr.GetTodaysCustomerCount().ToString();
+            lblTodayCustomerCount.Text = wpr.GetTodaysVehiclesCount().ToString();
+            lblTodayIncome.Text = wpr.GetTodaysInCome().ToString();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

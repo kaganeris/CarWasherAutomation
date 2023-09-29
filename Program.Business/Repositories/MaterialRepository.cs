@@ -57,5 +57,13 @@ namespace Program.Business.Repositories
                 db.SaveChanges();
             }
         }
+        public void ReduceStock(int materialID)
+        {
+            Material material = db.Materials.FirstOrDefault(m => m.ID == materialID);
+            material.Stock--;
+            material.ModifiedDate = DateTime.Now;
+            db.Materials.Update(material);
+            db.SaveChanges();
+        }
     }
 }

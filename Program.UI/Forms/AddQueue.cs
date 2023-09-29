@@ -100,7 +100,7 @@ namespace Program.UI.Forms
             wp.WaterConsumption = vehicleRep.GetWaterConsumption(wp);
             wp.Discount = vehicleRep.GetDiscount(SelectedVehicle.Customer);
             wpRep.Add(wp);
-            Vehicles vehicles = new Vehicles();
+            Vehicles vehicles = new Vehicles(anaform);
             vehicles.MdiParent = anaform;
             vehicles.Dock = DockStyle.Fill;
             anaform.ActiveMdiChild.Close();

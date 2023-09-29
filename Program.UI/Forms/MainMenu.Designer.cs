@@ -38,7 +38,7 @@
             btnDashboard = new Button();
             panel2 = new Panel();
             panel5 = new Panel();
-            lblEmployeeCount = new Label();
+            lblTodayIncome = new Label();
             label5 = new Label();
             panel4 = new Panel();
             lblVehiclesCount = new Label();
@@ -46,6 +46,7 @@
             panel3 = new Panel();
             lblTodayCustomerCount = new Label();
             label1 = new Label();
+            button1 = new Button();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             panel5.SuspendLayout();
@@ -174,6 +175,7 @@
             // panel2
             // 
             panel2.BackgroundImage = (Image)resources.GetObject("panel2.BackgroundImage");
+            panel2.Controls.Add(button1);
             panel2.Controls.Add(panel5);
             panel2.Controls.Add(panel4);
             panel2.Controls.Add(panel3);
@@ -187,33 +189,33 @@
             // panel5
             // 
             panel5.BackColor = Color.Transparent;
-            panel5.Controls.Add(lblEmployeeCount);
+            panel5.Controls.Add(lblTodayIncome);
             panel5.Controls.Add(label5);
             panel5.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
             panel5.ForeColor = Color.White;
-            panel5.Location = new Point(674, 3);
+            panel5.Location = new Point(622, 3);
             panel5.Name = "panel5";
             panel5.Size = new Size(200, 124);
             panel5.TabIndex = 2;
             // 
-            // lblEmployeeCount
+            // lblTodayIncome
             // 
-            lblEmployeeCount.AutoSize = true;
-            lblEmployeeCount.Font = new Font("Century Gothic", 27.75F, FontStyle.Bold, GraphicsUnit.Point);
-            lblEmployeeCount.Location = new Point(83, 48);
-            lblEmployeeCount.Name = "lblEmployeeCount";
-            lblEmployeeCount.Size = new Size(40, 44);
-            lblEmployeeCount.TabIndex = 1;
-            lblEmployeeCount.Text = "1";
+            lblTodayIncome.AutoSize = true;
+            lblTodayIncome.Font = new Font("Century Gothic", 27.75F, FontStyle.Bold, GraphicsUnit.Point);
+            lblTodayIncome.Location = new Point(21, 48);
+            lblTodayIncome.Name = "lblTodayIncome";
+            lblTodayIncome.Size = new Size(155, 44);
+            lblTodayIncome.TabIndex = 1;
+            lblTodayIncome.Text = "1000,00";
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(3, 6);
+            label5.Location = new Point(36, 6);
             label5.Name = "label5";
-            label5.Size = new Size(190, 19);
+            label5.Size = new Size(131, 19);
             label5.TabIndex = 0;
-            label5.Text = "Active Employee Count";
+            label5.Text = "Today's Income";
             // 
             // panel4
             // 
@@ -222,7 +224,7 @@
             panel4.Controls.Add(label3);
             panel4.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
             panel4.ForeColor = Color.White;
-            panel4.Location = new Point(405, 3);
+            panel4.Location = new Point(353, 3);
             panel4.Name = "panel4";
             panel4.Size = new Size(200, 124);
             panel4.TabIndex = 2;
@@ -253,7 +255,7 @@
             panel3.Controls.Add(label1);
             panel3.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
             panel3.ForeColor = Color.White;
-            panel3.Location = new Point(123, 3);
+            panel3.Location = new Point(71, 3);
             panel3.Name = "panel3";
             panel3.Size = new Size(200, 124);
             panel3.TabIndex = 0;
@@ -276,6 +278,19 @@
             label1.Size = new Size(194, 19);
             label1.TabIndex = 0;
             label1.Text = "Today's Customer Count";
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.Transparent;
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Image = (Image)resources.GetObject("button1.Image");
+            button1.Location = new Point(867, 3);
+            button1.Name = "button1";
+            button1.Size = new Size(47, 45);
+            button1.TabIndex = 3;
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // MainMenu
             // 
@@ -314,12 +329,13 @@
         private Label lblTodayCustomerCount;
         private Label label1;
         private Panel panel5;
-        private Label lblEmployeeCount;
+        private Label lblTodayIncome;
         private Label label5;
         private Panel panel4;
         private Label lblVehiclesCount;
         private Label label3;
         private Button btnAddQueue;
         private Button btnMaterialStock;
+        private Button button1;
     }
 }

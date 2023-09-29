@@ -19,12 +19,14 @@ namespace Program.UI.UserControls
         WashingProcess wp;
         Vehicles _vehicles;
         CustomerVehicleControl cvc;
-        public WasherControl(Vehicles vehicles, WashingProcess washingProcess, CustomerVehicleControl customerVehicleControl)
+        MainMenu mainMenu;
+        public WasherControl(Vehicles vehicles, WashingProcess washingProcess, CustomerVehicleControl customerVehicleControl,MainMenu _mainMenu)
         {
             InitializeComponent();
             wp = washingProcess;
             _vehicles = vehicles;
             cvc = customerVehicleControl;
+            mainMenu = _mainMenu;
         }
         public Image BodyTypeImage
         {
@@ -82,14 +84,17 @@ namespace Program.UI.UserControls
                     return;
                 }
                 MaterialWashingProcessRepository materialWashingProcessRepository = new MaterialWashingProcessRepository();
+                MaterialRepository materialRepository = new MaterialRepository();
                 foreach (var item in materialWashingProcess)
                 {
+                    materialRepository.ReduceStock(item.MaterialID);
                     materialWashingProcessRepository.Add(item);
                 }
                 WashingProcessRepository washingProcessRepository = new WashingProcessRepository();
                 wp.Employee = (Employee)cmbEmployees.SelectedItem;
                 wp.IsQueue = false;
                 washingProcessRepository.Update(wp);
+                mainMenu.UpdateTodaysInfos();
                 foreach (var item in _vehicles.Controls)
                 {
                     if (item is GroupBox)
